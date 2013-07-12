@@ -51,7 +51,7 @@ public class SentServiceGetMessageTests extends BaseTest {
 
     private SentMessageResponse getActualSentMessageResponseWithId(String id) {
         for(SentMessageResponse m : actualMessages) {
-            if ( m.getId() == id)
+            if ( m.getId().equals(id))
                 return m;
         }
         return null;

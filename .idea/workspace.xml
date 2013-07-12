@@ -49,17 +49,18 @@
     <file path="/SendServiceMultiMessageTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373636274945" ignored="false" />
     <file path="/SendServiceMultiScheduledSmsMessageTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373637699982" ignored="false" />
     <file path="/SentServiceGetMessagesTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373638471410" ignored="false" />
-    <file path="/SentServiceGetMessageTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373640849605" ignored="false" />
+    <file path="/SentServiceGetMessageTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373642538670" ignored="false" />
     <file path="/a.dummy" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373637336407" ignored="false" />
     <file path="/InboxServiceGetInboxTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373638336142" ignored="false" />
     <file path="/InboxServiceGetPagedMessagesTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373639237215" ignored="false" />
     <file path="/a.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373638871841" ignored="false" />
-    <file path="/InboxServiceGetMessageTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373640901896" ignored="false" />
+    <file path="/InboxServiceGetMessageTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373642531724" ignored="false" />
     <file path="/InboxServiceMarkTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373640875894" ignored="false" />
     <file path="/GetInboxMessageSample.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373640595515" ignored="false" />
     <file path="/SendServiceSingleSmsMessageTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373640679310" ignored="false" />
-    <file path="/InboxServiceDeleteTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373641218500" ignored="false" />
+    <file path="/InboxServiceDeleteTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373642522557" ignored="false" />
     <file path="/ContactsServiceGetContactsTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373642219488" ignored="false" />
+    <file path="/ContactsServiceGetContactTests.java" changelist="50906cb1-b281-47ec-a2e3-d739f637d7af" time="1373642889885" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,19 +168,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="esendex_test.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/esendex_test.properties">
+      <file leaf-file-name="ContactsServiceGetContactTests.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/contactsservice/ContactsServiceGetContactTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="37" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="30" column="5" selection-start="980" selection-end="980" vertical-scroll-proportion="0.6048632">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContactsServiceGetContactsTests.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ContactsServiceGetContactsTests.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/contactsservice/ContactsServiceGetContactsTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="843" selection-end="843" vertical-scroll-proportion="0.80091184">
+            <state line="13" column="39" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -197,9 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/messagingservice/SessionSendServiceMultiScheduledSmsMessageTests.java" />
-        <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/sentservice/session/SentServiceGetMessagesTests.java" />
-        <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/sentservice/session/SentServiceGetMessageTests.java" />
         <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/sentservice/session/SessionSentServiceGetMessagesTests.java" />
         <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceGetInboxTests.java" />
         <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceGetMessagesTests.java" />
@@ -207,12 +207,15 @@
         <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceGetPagedMessagesTests.java" />
         <option value="$PROJECT_DIR$/samples/esendex/sdk/java/example/GetInboxMessageSample.java" />
         <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/messagingservice/SendServiceSingleSmsMessageTests.java" />
-        <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/sentservice/SentServiceGetMessageTests.java" />
         <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceMarkTests.java" />
-        <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceGetMessageTests.java" />
-        <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceDeleteTests.java" />
         <option value="$PROJECT_DIR$/test/esendex_test.properties" />
         <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/contactsservice/ContactsServiceGetContactsTests.java" />
+        <option value="$PROJECT_DIR$/src/esendex/sdk/java/http/HttpQuery.java" />
+        <option value="$PROJECT_DIR$/test/esendex/sdk/java/BaseTest.java" />
+        <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceDeleteTests.java" />
+        <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceGetMessageTests.java" />
+        <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/sentservice/SentServiceGetMessageTests.java" />
+        <option value="$PROJECT_DIR$/test/esendex/sdk/java/integration/contactsservice/ContactsServiceGetContactTests.java" />
       </list>
     </option>
   </component>
@@ -319,62 +322,6 @@
               <option name="myItemId" value="integration" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="messagingservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inboxservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -399,86 +346,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="contactsservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex-java-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="samples" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="esendex" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -512,7 +379,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
   </component>
@@ -530,29 +397,7 @@
       <recent name="C:\dev\esendex-java-sdk" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContactsServiceGetContactsTests">
-    <configuration default="false" name="GetInboxMessageSample.retrieve" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="esendex.java.sdk" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="esendex.sdk.java.example.GetInboxMessageSample" />
-      <option name="METHOD_NAME" value="retrieve" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.esendex.sdk.java.integration.contactsservice in esendex.java.sdk">
     <configuration default="false" name="SentServiceGetMessageTests.thenTheExpectedMessagesAreReturned" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="esendex.java.sdk" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -633,6 +478,28 @@
       <option name="MAIN_CLASS_NAME" value="esendex.sdk.java.integration.contactsservice.ContactsServiceGetContactsTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="esendex.sdk.java.integration.contactsservice in esendex.java.sdk" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="esendex.java.sdk" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="esendex.sdk.java.integration.contactsservice" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -788,19 +655,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="JUnit.SanityTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.ContactServiceTest.test" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.GetInboxMessageSample.retrieve" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SentServiceGetMessageTests.thenTheExpectedMessagesAreReturned" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.esendex.sdk.java in esendex.java.sdk" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.InboxServiceDeleteTests.thenTheMessageIsNotInTheMessagesRetrievedAfterTheDelete" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.ContactsServiceGetContactsTests" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SentServiceGetMessageTests.thenTheExpectedMessagesAreReturned" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.esendex.sdk.java in esendex.java.sdk" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.InboxServiceDeleteTests.thenTheMessageIsNotInTheMessagesRetrievedAfterTheDelete" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ContactsServiceGetContactsTests" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.esendex.sdk.java.integration.contactsservice in esendex.java.sdk" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ContactsServiceGetContactsTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.InboxServiceDeleteTests.thenTheMessageIsNotInTheMessagesRetrievedAfterTheDelete" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.esendex.sdk.java in esendex.java.sdk" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SentServiceGetMessageTests.thenTheExpectedMessagesAreReturned" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.GetInboxMessageSample.retrieve" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.esendex.sdk.java.integration.contactsservice in esendex.java.sdk" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ContactsServiceGetContactsTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.InboxServiceDeleteTests.thenTheMessageIsNotInTheMessagesRetrievedAfterTheDelete" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.esendex.sdk.java in esendex.java.sdk" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SentServiceGetMessageTests.thenTheExpectedMessagesAreReturned" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -861,6 +728,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875368" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40039253" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901296" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -871,13 +739,13 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973504" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24866596" sideWeight="0.6712463" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3994112" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875368" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -945,97 +813,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/esendex/sdk/java/service/MessagingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/esendex/sdk/java/example/CreateContactSample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/esendex/sdk/java/example/GetInboxMessageSample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="8" selection-start="597" selection-end="597" vertical-scroll-proportion="0.026687598">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/messagingservice/SendServiceSingleSmsMessageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="61" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.733124">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceMarkTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="27" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceGetMessageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="757" selection-end="757" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/esendex/sdk/java/service/InboxService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="12" selection-start="850" selection-end="850" vertical-scroll-proportion="0.33281004">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/esendex/sdk/java/service/ContactService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="26" selection-start="566" selection-end="566" vertical-scroll-proportion="0.37362638">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceDeleteTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="32" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/sentservice/SentServiceGetMessageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.5425532">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/messagingservice/SendServiceMultiScheduledSmsMessageTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="13" selection-start="618" selection-end="618" vertical-scroll-proportion="0.103343464">
           <folding>
-            <element signature="e#968#987#0" expanded="true" />
+            <element signature="e#968#987#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/BaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="886" selection-end="886" vertical-scroll-proportion="0.3024316">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1043,7 +826,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="8" selection-start="863" selection-end="863" vertical-scroll-proportion="0.7960725">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1062,9 +845,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/esendex-java-sdk.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="2" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/esendex/sdk/java/http/HttpQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="9" selection-start="904" selection-end="904" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/esendex/sdk/java/parser/EsendexCasedEnumConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="8" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/BaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceDeleteTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="78" selection-start="1368" selection-end="1368" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/inboxservice/InboxServiceGetMessageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="38" selection-start="1873" selection-end="1873" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/sentservice/SentServiceGetMessageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="38" selection-start="1841" selection-end="1841" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/esendex-java-sdk.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_esendex.java.sdk.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="2" selection-start="3559" selection-end="3559" vertical-scroll-proportion="0.2914485">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/esendex/sdk/java/model/transfer/message/BodyDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="4" selection-start="492" selection-end="492" vertical-scroll-proportion="0.59385663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/contactsservice/ContactsServiceGetContactsTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="843" selection-end="843" vertical-scroll-proportion="0.80091184">
+        <state line="13" column="39" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/esendex/sdk/java/integration/contactsservice/ContactsServiceGetContactTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="5" selection-start="980" selection-end="980" vertical-scroll-proportion="0.6048632">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

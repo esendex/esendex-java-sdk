@@ -29,7 +29,7 @@ public class HttpQuery {
 		UNREAD;
 		public String toString() {
 			return name().toLowerCase();
-		};
+		}
 	}
 	
 	public enum FilterBy {

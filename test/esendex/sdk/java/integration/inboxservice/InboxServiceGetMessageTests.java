@@ -48,7 +48,7 @@ public class InboxServiceGetMessageTests extends BaseTest {
     private InboxMessageResponse getActualInboxMessageResponseWithId(String id) {
 
         for (InboxMessageResponse m : actualMessages) {
-            if ( m.getId() == id)
+            if ( m.getId().equals(id))
                 return m;
         }
         return null;

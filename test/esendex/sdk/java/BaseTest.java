@@ -21,7 +21,7 @@ public abstract class BaseTest {
                 : getSessionFactory();
     }
 
-    private static IServiceFactory getBasicFactory() throws EsendexException {
+    private static IServiceFactory getBasicFactory() {
 
         if (basicFactory == null)
             basicFactory = ServiceFactory.createBasicAuthenticatingFactory(userPassword);

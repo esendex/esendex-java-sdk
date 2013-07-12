@@ -35,7 +35,7 @@ public class InboxServiceDeleteTests extends BaseTest {
     public void thenTheMessageIsNotInTheMessagesRetrievedAfterTheDelete() {
 
         for (InboxMessageResponse inboxMessageResponse : messagesAfterDelete.getMessages()) {
-            assertTrue(messageIdToDelete != inboxMessageResponse.getId());
+            assertTrue(messageIdToDelete.equals(inboxMessageResponse.getId()));
         }
     }
 
