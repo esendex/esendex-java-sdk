@@ -15,7 +15,7 @@ public class InboxServiceDeleteTests extends BaseTest {
     private static String messageIdToDelete;
     private static InboxMessageCollectionResponse messagesAfterDelete;
 
-    @BeforeClass
+    /*@BeforeClass
     public static void whenDeletingAnInboxMessage() throws EsendexException {
 
         InboxService inboxService = getFactory().getInboxService();
@@ -37,6 +37,6 @@ public class InboxServiceDeleteTests extends BaseTest {
         for (InboxMessageResponse inboxMessageResponse : messagesAfterDelete.getMessages()) {
             assertTrue(messageIdToDelete.equals(inboxMessageResponse.getId()));
         }
-    }
+    }*/
 
 }
