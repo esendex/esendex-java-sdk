@@ -72,6 +72,7 @@ public class XStreamParser implements XmlParser {
 
 		// Contacts
 		xStream.alias("contact", ContactDto.class);
+        xStream.omitField(ContactDto.class, "groups");
 		xStream.alias("contacts", ContactCollectionDto.class);
 		xStream.addImplicitCollection(ContactCollectionDto.class, "contacts");
 

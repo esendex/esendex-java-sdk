@@ -21,7 +21,7 @@ public class ContactDto extends Dto {
 	private String quickname;
 	private String mobilenumber;
 	private ContactType type;
-	private List<ContactGroupDto> groups;
+	//private List<ContactGroupSummaryDto> groups;
 	
 	public ContactDto() {		
 	}
@@ -83,14 +83,14 @@ public class ContactDto extends Dto {
 		return type;
 	}
 
-	/**
-	 * This element lists links to the Contact Groups that this Contact 
-	 * is associated with.
-	 * @return the contact groups
-	 */
-	public List<ContactGroupDto> getGroups() {
-		return groups;
-	}
+//	/**
+//	 * This element lists links to the Contact Groups that this Contact
+//	 * is associated with.
+//	 * @return the contact groups
+//	 */
+//	public List<ContactGroupSummaryDto> getGroups() {
+//		return groups;
+//	}
 	
 	
 	/**
@@ -147,14 +147,14 @@ public class ContactDto extends Dto {
 		this.type = type;
 	}
 
-	/**
-	 * Sets the groups.
-	 * @param groups the groups to set
-	 * @see #getGroups()
-	 */
-	public void setGroups(List<ContactGroupDto> groups) {
-		this.groups = groups;
-	}
+//	/**
+//	 * Sets the groups.
+//	 * @param groups the groups to set
+//	 * @see #getGroups()
+//	 */
+//	public void setGroups(List<ContactGroupSummaryDto> groups) {
+//		this.groups = groups;
+//	}
 
 	/**
 	 * {@inheritDoc}

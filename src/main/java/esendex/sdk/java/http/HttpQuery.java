@@ -1,5 +1,8 @@
 package esendex.sdk.java.http;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 public class HttpQuery {
 	
 	private StringBuilder queryString = new StringBuilder();
@@ -44,7 +47,13 @@ public class HttpQuery {
 		if (queryString.length() > 0) queryString.append('&');
 		queryString.append(key.name);
 		queryString.append('=');
-		queryString.append(value.toString());	
+
+        try {
+            String encodedValue = URLEncoder.encode(value.toString(), "UTF-8");
+            queryString.append(encodedValue);
+        } catch (UnsupportedEncodingException e) {
+            queryString.append(value.toString());
+        }
 	}
 	
 	@Override

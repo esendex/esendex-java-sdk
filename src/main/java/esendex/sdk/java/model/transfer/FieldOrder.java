@@ -43,7 +43,7 @@ public class FieldOrder {
 		fieldOrders.add(new FieldOrder(
 				ContactDto.class,  new String[] {
 					"id", "uri", "xmlns", "concurrencyid", "firstname", "lastname", 
-					"quickname", "mobilenumber", "type", "groups", "owner"}));
+					"quickname", "mobilenumber", "owner", "type"}));
 		
 		fieldOrders.add(new FieldOrder(
 				ContactCollectionDto.class,  new String[] {

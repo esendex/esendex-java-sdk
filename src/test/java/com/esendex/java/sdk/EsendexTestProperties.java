@@ -26,9 +26,10 @@ public class EsendexTestProperties {
     public EsendexTestProperties() {
         properties = new Properties();
         try {
-            InputStream in = getClass().getResourceAsStream("/" + PROPERTY_FILE_NAME);
-            properties.load(in);
-            in.close();
+            InputStream is = getClass().getResourceAsStream("/" + PROPERTY_FILE_NAME);
+            if (is == null) throw new FileNotFoundException();
+            properties.load(is);
+            is.close();
         } catch (IOException e) {
             throw new RuntimeException("Could not load '" + PROPERTY_FILE_NAME + "' is it at the root of the classpath?");
         }

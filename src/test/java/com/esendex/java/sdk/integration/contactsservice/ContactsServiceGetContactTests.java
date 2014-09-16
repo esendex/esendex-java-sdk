@@ -3,6 +3,7 @@ package com.esendex.java.sdk.integration.contactsservice;
 import com.esendex.java.sdk.BaseTest;
 import esendex.sdk.java.EsendexException;
 import esendex.sdk.java.model.domain.response.ContactResponse;
+import esendex.sdk.java.service.ContactService;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -20,11 +21,13 @@ public class ContactsServiceGetContactTests extends BaseTest {
     @BeforeClass
     public static void whenGettingContacts() throws EsendexException {
 
-        expectedContacts = getFactory().getContactService().getContacts(0, 5);
+        ContactService contactService = getFactory().getContactService();
+        expectedContacts = contactService.getContacts(0, 5);
 
         actualContacts = new Vector<ContactResponse>();
         for (ContactResponse expectedContact : expectedContacts) {
-            ContactResponse contact = getFactory().getContactService().getContact(expectedContact.getId());
+            String contactId = expectedContact.getId();
+            ContactResponse contact = contactService.getContact(contactId);
 
             actualContacts.add(contact);
         }
