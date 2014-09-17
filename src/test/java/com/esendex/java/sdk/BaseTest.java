@@ -20,13 +20,17 @@ public abstract class BaseTest {
     static {
         EsendexTestProperties testProperties = EsendexTestProperties.instance();
 
-        USER = testProperties.getProperty(EsendexTestProperties.Key.USERNAME);
-        PASSWORD = testProperties.getProperty(EsendexTestProperties.Key.PASSWORD);
-        ACCOUNT = testProperties.getProperty(EsendexTestProperties.Key.ACCOUNT);
-        DESTINATION_NUMBER = testProperties.getProperty(EsendexTestProperties.Key.DESTINATION_NUMBER);
+        USER = testProperties.getUsername();
+        PASSWORD = testProperties.getPassword();
+        ACCOUNT = testProperties.getAccount();
+        DESTINATION_NUMBER = testProperties.getDestinationNumber();
+
         userPassword = new UserPassword(USER, PASSWORD);
 
-        EsendexProperties.instance().setProperty("esendex.domain", testProperties.getProperty(EsendexTestProperties.Key.DOMAIN));
+        String domain = testProperties.getDomain();
+
+        if(domain != null)
+            EsendexProperties.instance().setProperty("esendex.domain", domain);
     }
 
     public static IServiceFactory getFactory() throws EsendexException {

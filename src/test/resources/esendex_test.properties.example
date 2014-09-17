@@ -1,4 +1,5 @@
 tests.username=you@your-domain.com
-tests.password=your-pasword
+tests.password=your-password
 tests.account=EX0123456
 tests.destination_number=447012345678
+#tests.domain=api.esendex.com
