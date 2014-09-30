@@ -10,26 +10,19 @@
   <artifactId>esendex-java-sdk</artifactId>
   <version>1.0.0.${buildnumber}</version>
   <build>
-    <pluginManagement>
-      <plugins>
-          <plugin>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <version>2.3.2</version>
-          </plugin>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-failsafe-plugin</artifactId>
-              <version>2.17</version>
-          </plugin>
-      </plugins>
-    </pluginManagement>
     <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.2</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
+        </plugin>
       <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>2.17</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -43,11 +36,6 @@
           </dependency>
         </dependencies>
       </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <version>2.17</version>
-        </plugin>
     </plugins>
   </build>
   <dependencies>
