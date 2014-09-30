@@ -11,7 +11,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-public class SendServiceSingleSmsMessageTests extends BaseTest {
+public class SendServiceSingleSmsMessageIT extends BaseTest {
 
     private static MessageResultResponse resultResponse;
 

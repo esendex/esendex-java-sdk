@@ -13,7 +13,7 @@ import java.util.Vector;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class ContactsServiceGetContactTests extends BaseTest {
+public class ContactsServiceGetContactIT extends BaseTest {
 
     private static List<ContactResponse> expectedContacts;
     private static List<ContactResponse> actualContacts;

@@ -9,14 +9,13 @@ import esendex.sdk.java.service.MessagingService;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Vector;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-public class SendServiceMultiScheduledSmsMessageTests extends BaseTest {
+public class SendServiceMultiSmsMessageIT extends BaseTest {
 
     private static MessageResultResponse resultResponse;
 
@@ -34,7 +33,7 @@ public class SendServiceMultiScheduledSmsMessageTests extends BaseTest {
 
         SmsMessageCollectionRequest smsMessageRequests = new SmsMessageCollectionRequest(ACCOUNT, messages);
 
-        resultResponse = messagingService.sendScheduledMessages(smsMessageRequests, new Date());
+        resultResponse = messagingService.sendMessages(smsMessageRequests);
     }
 
     @Test
@@ -49,4 +48,5 @@ public class SendServiceMultiScheduledSmsMessageTests extends BaseTest {
             assertNotNull(resultResponse.getMessageIds().get(i));
     }
 }
+
 

@@ -11,7 +11,7 @@ import org.junit.Test;
 import static junit.framework.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-public class InboxServiceGetPagedMessagesTests extends BaseTest {
+public class InboxServiceGetPagedMessagesIT extends BaseTest {
 
     private static InboxMessageCollectionResponse messages;
     private static int pageSize;

@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-public class InboxServiceMarkTests extends BaseTest {
+public class InboxServiceMarkIT extends BaseTest {
 
     private static InboxMessageResponse unreadMessage;
     private static InboxMessageResponse readMessage;

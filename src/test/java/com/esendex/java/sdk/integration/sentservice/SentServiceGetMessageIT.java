@@ -13,7 +13,7 @@ import java.util.Vector;
 
 import static org.junit.Assert.assertEquals;
 
-public class SentServiceGetMessageTests extends BaseTest {
+public class SentServiceGetMessageIT extends BaseTest {
 
     private static SentMessageCollectionResponse expectedMessages;
     private static List<SentMessageResponse> actualMessages;

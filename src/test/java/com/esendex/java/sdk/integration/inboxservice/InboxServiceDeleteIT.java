@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class InboxServiceDeleteTests extends BaseTest {
+public class InboxServiceDeleteIT extends BaseTest {
 
     private static String messageIdToDelete;
     private static InboxMessageCollectionResponse messagesAfterDelete;

@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * The Class SanityTest.
  */
-public class SanityTests extends BaseTest {
+public class SanityTest extends BaseTest {
 
 	/**
 	 * Test account details available.

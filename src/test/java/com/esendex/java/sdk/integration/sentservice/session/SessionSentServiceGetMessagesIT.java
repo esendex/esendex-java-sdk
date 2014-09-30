@@ -1,41 +1,34 @@
-package com.esendex.java.sdk.integration.sentservice;
+package com.esendex.java.sdk.integration.sentservice.session;
 
 import com.esendex.java.sdk.BaseTest;
 import esendex.sdk.java.EsendexException;
 import esendex.sdk.java.model.domain.response.SentMessageCollectionResponse;
 import esendex.sdk.java.model.domain.response.SentMessageResponse;
 import esendex.sdk.java.service.SentService;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-public class SentServiceGetMessagesTests extends BaseTest {
+public class SessionSentServiceGetMessagesIT extends BaseTest {
 
     private static SentMessageCollectionResponse messages;
-    private static int pageSize;
 
     @BeforeClass
-    public static void whenGettingMessagesForTheAccount() throws EsendexException {
+    public static void whenGettingMessagesForTheAccountUsingASession() throws EsendexException {
 
+        IsSessionMode = true;
         SentService sentService = getFactory().getSentService();
 
-        pageSize = 10;
-        messages = sentService.getMessages(ACCOUNT, 0, pageSize);
-    }
-
-    @Test
-    public void thenNoMoreThanTheSpecifiedNumberOfMessagesReturnedIsLessThanOrEqualToTheTotalCount() {
-
-        assertTrue(messages.getCount() <= messages.getTotalCount());
+        messages = sentService.getMessages(ACCOUNT, 0, 10);
     }
 
     @Test
     public void thenTheNumberOfMessagesReturnedIsLessThanOrEqualToTheTotalCount() {
 
-        assertTrue(messages.getCount() <= pageSize);
+        assertTrue(messages.getCount() <= messages.getTotalCount());
     }
 
     @Test
@@ -46,11 +39,9 @@ public class SentServiceGetMessagesTests extends BaseTest {
         }
     }
 
-    @Test
-    public void thenAllTheMessagesAreForTheSpecifiedAccount() {
+    @AfterClass
+    public static void finallyEndSessionMode() {
 
-        for(SentMessageResponse m : messages.getMessages()) {
-            assertEquals(ACCOUNT, m.getReference());
-        }
+        IsSessionMode = false;
     }
 }

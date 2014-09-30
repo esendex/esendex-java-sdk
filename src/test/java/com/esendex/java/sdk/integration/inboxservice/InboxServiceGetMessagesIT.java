@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import static junit.framework.Assert.assertNotNull;
 
-public class InboxServiceGetMessagesTests extends BaseTest {
+public class InboxServiceGetMessagesIT extends BaseTest {
 
     private static InboxMessageCollectionResponse messages;
 
