@@ -18,7 +18,8 @@ public class EsendexProperties {
 		VERSION 	("esendex.version"),
 		NAMESPACE 	("esendex.namespace"),
 		DOMAIN 		("esendex.domain"),
-		PORT 		("esendex.port");
+		PORT 		("esendex.port"),
+        BUILD_VERSION("esendex.build_version");
 		
 		String value;
 		Key(String v) {

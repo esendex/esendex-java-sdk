@@ -1,6 +1,7 @@
 
 package esendex.sdk.java.http;
 
+import esendex.sdk.java.EsendexProperties;
 import esendex.sdk.java.service.auth.Authenticator;
 
 import java.io.*;
@@ -10,8 +11,6 @@ import java.net.URL;
 /**
  * Makes, writes to and reads from a URL connection with the
  * HTTP protocol.
- * 
- * @author Mike Whittaker
  */
 public class HttpConnectorImpl implements HttpConnector {
 
@@ -92,13 +91,15 @@ public class HttpConnectorImpl implements HttpConnector {
                                                 Authenticator authenticator,
                                                 String data)
             throws IOException {
+
+        String build_version = EsendexProperties.instance().getProperty(EsendexProperties.Key.BUILD_VERSION);
+
         HttpURLConnection uc = (HttpURLConnection) url.openConnection();
         authenticator.createHeader(uc);
-
         uc.setRequestProperty(CONTENT_TYPE, XML_CONTENT_TYPE);
+        uc.setRequestProperty("User-Agent", "esendex-java-sdk/" + build_version);
         uc.setRequestMethod(method.toString());
         uc.setRequestProperty("Content-Length", Integer.toString(data == null ? 0 : data.length()));
-
 
         if ( method != HttpRequestMethod.GET && method != HttpRequestMethod.DELETE && data == null ) {
             data = "";
