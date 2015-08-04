@@ -36,13 +36,27 @@
           </dependency>
         </dependencies>
       </plugin>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>copy-dependencies</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>${project.build.directory}/dependencies</outputDirectory>
+              </configuration>
+           </execution>
+        </executions>
+      </plugin>
     </plugins>
-  <resources>
-      <resource>
-          <directory>src/main/resources</directory>
-          <filtering>true</filtering>
+    <resources>
+       <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
       </resource>
-  </resources>
+    </resources>
   </build>
   <dependencies>
     <dependency>
