@@ -8,7 +8,7 @@
   </properties>
   <groupId>esendex-java-sdk</groupId>
   <artifactId>esendex-java-sdk</artifactId>
-  <version>1.0.0.${buildnumber}</version>
+  <version>1.0.1</version>
   <build>
     <plugins>
         <plugin>
@@ -36,7 +36,27 @@
           </dependency>
         </dependencies>
       </plugin>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>copy-dependencies</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>${project.build.directory}/dependency</outputDirectory>
+              </configuration>
+           </execution>
+        </executions>
+      </plugin>
     </plugins>
+    <resources>
+       <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
   </build>
   <dependencies>
     <dependency>
