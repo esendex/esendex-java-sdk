@@ -10,7 +10,8 @@ public enum MessageLanguage {
 	EN_GB ("en-GB"),
 	EN_AU ("en-AU"),
 	FR_FR ("fr-FR"),
-	ES_ES ("es-ES");
+	ES_ES ("es-ES"),
+	DE_DE ("de-DE");
 	
 	private String representation;
 
