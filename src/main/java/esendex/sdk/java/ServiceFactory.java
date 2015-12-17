@@ -83,11 +83,12 @@ public abstract class ServiceFactory implements IServiceFactory  {
 		return new InboxServiceImpl(authenticator);
 	}
 
-	/**
-	 * Obtains a service suitable for create, read, update and delete
-	 * operations on the users contacts.
-	 * @return the service
-	 */
+    /**
+     * This feature has now been deprecated in the new major version.
+     * For new integrations please use the newest version of the SDK.
+     *
+     * @deprecated Please make a local copy of your contacts and re-create using the new major version of the SDK.
+     */
 	public ContactService getContactService() {
 		return new ContactServiceImpl(authenticator);
 	}
