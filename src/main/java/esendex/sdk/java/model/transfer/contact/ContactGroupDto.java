@@ -6,8 +6,8 @@ import esendex.sdk.java.model.types.ContactType;
 
 /**
  * Data holder for contact group entity data.  This class directly holds the
- * parsed xml data. 
- * @to.do This data is currently parsed but out of scope for the current release
+ * parsed xml data.
+ *
  * @author Mike Whittaker
  */
 public class ContactGroupDto extends Dto {
