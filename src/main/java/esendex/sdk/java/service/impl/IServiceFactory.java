@@ -30,13 +30,11 @@ public interface IServiceFactory {
 	 */
 	InboxService getInboxService();
 
-	/**
-     * This feature has now been deprecated in the new major version.
-     * It will be completely removed on 04/06/2016.
-     *
-     * @deprecated Please make a local copy of your contacts and re-create using the new major version of the SDK.
-	 */
-    @Deprecated
+    /**
+     * Obtains a service suitable for create, read, update and delete
+     * operations on the users contacts.
+     * @return the service
+     */
 	ContactService getContactService();
 
 }
