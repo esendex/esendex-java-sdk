@@ -15,13 +15,15 @@ public class ContactRequest extends BaseContact {
 	 * mobile number.
 	 * @param quickName the quickname
 	 * @param mobileNumber the mobile number
+     * @param accountReference the account reference
 	 */
-	public ContactRequest(String quickName, String mobileNumber) {
-		if (quickName == null || mobileNumber == null)
+	public ContactRequest(String quickName, String mobileNumber, String accountReference) {
+		if (quickName == null || mobileNumber == null || accountReference == null)
 			throw new NullPointerException("arguments can not be null");
 
 		setQuickName(quickName);
 		setMobileNumber(mobileNumber);
+        setAccountReference(accountReference);
 	}
 
 	/**
@@ -64,6 +66,9 @@ public class ContactRequest extends BaseContact {
 		super.setQuickName(quickName);
 	}
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setAccountReference(String accountReference) {
         super.setAccountReference(accountReference);
