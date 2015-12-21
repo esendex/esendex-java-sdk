@@ -72,7 +72,7 @@ public abstract class Resource {
         if(this.version != null)
 		    builder.append("v" + this.version);
         else
-            builder.append("v" + props.getProperty(EsendexProperties.Key.VERSION));
+            builder.append(props.getProperty(EsendexProperties.Key.VERSION));
 		return builder.toString();
 	}
 
