@@ -19,9 +19,9 @@ public class CreateContactResource extends XmlRequesterResponderResource<Contact
 	 * @param auth the authenticator
 	 */
 	public CreateContactResource(Authenticator auth) {
-		super(auth, null, null, null);
+		super(auth, null, null, null, "2.0");
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -38,5 +38,5 @@ public class CreateContactResource extends XmlRequesterResponderResource<Contact
 		return HttpRequestMethod.POST;
 	}
 
-	
+
 }

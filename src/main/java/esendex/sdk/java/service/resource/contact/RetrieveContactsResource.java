@@ -10,7 +10,7 @@ import esendex.sdk.java.service.resource.base.XmlResponderResource;
 /**
  * This operation will return a ContactCollection response listing  a
  * user's stored contacts in a paged fashion.
- * 
+ *
  * @author Mike Whittaker
  */
 public class RetrieveContactsResource extends
@@ -21,9 +21,8 @@ public class RetrieveContactsResource extends
 	 * @param auth the authenticator
 	 * @param query the query
 	 */
-	public RetrieveContactsResource(
-			Authenticator auth, HttpQuery query) {
-		super(auth, null, null, query);
+	public RetrieveContactsResource(Authenticator auth, HttpQuery query) {
+		super(auth, null, null, query, "2.0");
 	}
 
 	/**

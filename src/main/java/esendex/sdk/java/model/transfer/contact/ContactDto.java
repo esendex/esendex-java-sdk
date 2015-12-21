@@ -13,31 +13,20 @@ import java.util.List;
  * @author Mike Whittaker
  */
 public class ContactDto extends Dto {
-	
-	private String concurrencyid;
-    private String owner;
+
 	private String firstname;
 	private String lastname;
 	private String quickname;
-	private String mobilenumber;
-	private ContactType type;
-	//private List<ContactGroupSummaryDto> groups;
-	
-	public ContactDto() {		
-	}
-	
-	/**
-	 * This unique identifier GUID should change each time the Contact details 
-	 * are amended. It can be used to help identify when a Contact has changed.
-	 * @return the concurrency id
-	 */
-	public String getConcurrencyid() {
-		return concurrencyid;
+	private String phonenumber;
+    private String accountreference;
+
+	public ContactDto() {
 	}
 
+
 	/**
-	 * The first name of this Contact. This may not be returned if the property 
-	 * has not been set for the Contact. 
+	 * The first name of this Contact. This may not be returned if the property
+	 * has not been set for the Contact.
 	 * @return the contacts first name
 	 */
 	public String getFirstname() {
@@ -45,7 +34,7 @@ public class ContactDto extends Dto {
 	}
 
 	/**
-	 * The last name of this Contact. This may not be returned if 
+	 * The last name of this Contact. This may not be returned if
 	 * the property has not been set for the Contact.
 	 * @return the contacts last name
 	 */
@@ -54,9 +43,9 @@ public class ContactDto extends Dto {
 	}
 
 	/**
-	 * This is the human-friendly shortcut for the Contact and can be used as 
-	 * a Message recipient instead of a telephone number. Where firstname 
-	 * and lastname have been set when the Contact was created, it may be a 
+	 * This is the human-friendly shortcut for the Contact and can be used as
+	 * a Message recipient instead of a telephone number. Where firstname
+	 * and lastname have been set when the Contact was created, it may be a
 	 * concatenation of these two values.
 	 * @return the contacts quickname
 	 */
@@ -69,38 +58,14 @@ public class ContactDto extends Dto {
 	 * @return the mobile number
 	 */
 	public String getMobilenumber() {
-		return mobilenumber;
+		return phonenumber;
 	}
 
-	/**
-	 * The type of Contact indicates where it was created from. Esendex means 
-	 * it was generated from within the Echo application. Mobile means it 
-	 * was generated from a mobile phone synchronisation. Within this Java API
-	 * this should always return {@link esendex.sdk.java.model.types.ContactType}
-	 * @return the contact type
-	 */
-	public ContactType getType() {
-		return type;
-	}
-
-//	/**
-//	 * This element lists links to the Contact Groups that this Contact
-//	 * is associated with.
-//	 * @return the contact groups
-//	 */
-//	public List<ContactGroupSummaryDto> getGroups() {
-//		return groups;
-//	}
-	
-	
-	/**
-	 * Sets the concurrencyid.
-	 * @param concurrencyid the concurrencyid to set
-	 * @see #getConcurrencyid()
-	 */
-	public void setConcurrencyid(String concurrencyid) {
-		this.concurrencyid = concurrencyid;
-	}
+    /**
+     * The accountReference associated with this Contact.
+     * @return the Account Reference
+     */
+    public String getAccountReference() {return accountreference; }
 
 	/**
 	 * Sets the firstname.
@@ -135,26 +100,17 @@ public class ContactDto extends Dto {
 	 * @see #getMobilenumber()
 	 */
 	public void setMobilenumber(String mobilenumber) {
-		this.mobilenumber = mobilenumber;
+		this.phonenumber = mobilenumber;
 	}
 
-	/**
-	 * Sets the type.
-	 * @param type the contact type to set
-	 * @see #getType()
-	 */
-	public void setType(ContactType type) {
-		this.type = type;
-	}
-
-//	/**
-//	 * Sets the groups.
-//	 * @param groups the groups to set
-//	 * @see #getGroups()
-//	 */
-//	public void setGroups(List<ContactGroupSummaryDto> groups) {
-//		this.groups = groups;
-//	}
+    /**
+     * Sets the type.
+     * @param accountReference the accountReference to set
+     * @see #getAccountReference() ()
+     */
+    public void setAccountReference(String accountReference) {
+        this.accountreference = accountReference;
+    }
 
 	/**
 	 * {@inheritDoc}
@@ -162,21 +118,11 @@ public class ContactDto extends Dto {
 	@Override
 	public String toString() {
 
-		return super.toString() +
-			"\nconcurrencyid:" + concurrencyid +
-			"\nfirstname:" + firstname +
-			"\nlastname:" + lastname +
-			"\nquickname:" + quickname +
-			"\nmobilenumber:" + mobilenumber +
-			"\ntype:" + type +
-            "\nowner:" + owner;
-	}
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
+        return super.toString() +
+                "\nfirstname:" + firstname +
+                "\nlastname:" + lastname +
+                "\nquickname:" + quickname +
+                "\nmobilenumber:" + phonenumber +
+                "\naccountreference:" + accountreference;
     }
 }

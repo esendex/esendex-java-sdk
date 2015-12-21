@@ -17,15 +17,14 @@ public class ContactRequest extends BaseContact {
 	 * @param mobileNumber the mobile number
 	 */
 	public ContactRequest(String quickName, String mobileNumber) {
-		if (quickName == null || mobileNumber == null) 
+		if (quickName == null || mobileNumber == null)
 			throw new NullPointerException("arguments can not be null");
 
 		setQuickName(quickName);
 		setMobileNumber(mobileNumber);
-		setType(ContactType.ESENDEX);
 	}
-	
-	/** 
+
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -33,7 +32,7 @@ public class ContactRequest extends BaseContact {
 		super.setFirstName(firstName);
 	}
 
-	/** 
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -41,7 +40,7 @@ public class ContactRequest extends BaseContact {
 		super.setId(id);
 	}
 
-	/** 
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -49,7 +48,7 @@ public class ContactRequest extends BaseContact {
 		super.setLastName(lastName);
 	}
 
-	/** 
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -57,7 +56,7 @@ public class ContactRequest extends BaseContact {
 		super.setMobileNumber(mobileNumber);
 	}
 
-	/** 
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -65,19 +64,9 @@ public class ContactRequest extends BaseContact {
 		super.setQuickName(quickName);
 	}
 
-	/** 
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void setType(ContactType type) {
-		super.setType(type);
-	}
+    @Override
+    public void setAccountReference(String accountReference) {
+        super.setAccountReference(accountReference);
+    }
 
-	/** 
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void setConcurrencyId(String concurrencyId) {
-		super.setConcurrencyId(concurrencyId);
-	}
 }

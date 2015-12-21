@@ -10,7 +10,7 @@ import esendex.sdk.java.service.resource.base.XmlRequesterResource;
  * This operation allows the creation of multiple Contacts with one request POST
  * to the Contacts resource. There is only an HTTP Status Code result from this
  * operation.
- * 
+ *
  * @author Mike Whittaker
  */
 public class CreateContactsResource extends XmlRequesterResource<ContactCollectionDto> {
@@ -20,9 +20,9 @@ public class CreateContactsResource extends XmlRequesterResource<ContactCollecti
 	 * @param auth the authenticator
 	 */
 	public CreateContactsResource(Authenticator auth) {
-		super(auth, null, null, null);
+		super(auth, null, null, null, "2.0");
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

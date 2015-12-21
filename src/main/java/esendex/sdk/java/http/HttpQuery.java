@@ -4,29 +4,33 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 public class HttpQuery {
-	
+
 	private StringBuilder queryString = new StringBuilder();
-	
-	public static final Key<Boolean> RETURN_MESSAGE_HEADERS 
+
+	public static final Key<Boolean> RETURN_MESSAGE_HEADERS
 			= new Key<Boolean>("returnMessageHeaders");
-	
-	public static final Key<Integer> COUNT 
+
+	public static final Key<Integer> COUNT
 			= new Key<Integer>("count");
 
-	public static final Key<Integer> START_INDEX 
+	public static final Key<Integer> START_INDEX
 			= new Key<Integer>("startIndex");
 
-	public static final Key<Action> ACTION 
+	public static final Key<Action> ACTION
 			= new Key<Action>("action");
-	
-	public static final Key<String> FILTER_VALUE 
+
+	public static final Key<String> FILTER_VALUE
 			= new Key<String>("filterValue");
-	
-	public static final Key<String> FILTER_BY 
+
+	public static final Key<String> FILTER_BY
 			= new Key<String>("filterBy");
-	
+
+    public static final Key<String> ACCOUNT_REFERENCE
+            = new Key<String>("accountreference");
+
 	public static final String ACCOUNT_FILTER  = "account";
-	
+
+
 	public enum Action {
 		READ,
 		UNREAD;
@@ -34,7 +38,7 @@ public class HttpQuery {
 			return name().toLowerCase();
 		}
 	}
-	
+
 	public enum FilterBy {
 		ACCOUNT ("");
 		String value;
@@ -42,7 +46,7 @@ public class HttpQuery {
 			this.value = v;
 		}
 	}
-	
+
 	public <E> void addParameter(Key<E> key, E value) {
 		if (queryString.length() > 0) queryString.append('&');
 		queryString.append(key.name);
@@ -55,12 +59,12 @@ public class HttpQuery {
             queryString.append(value.toString());
         }
 	}
-	
+
 	@Override
 	public String toString() {
 		return queryString.toString();
 	}
-	
+
 	private static class Key<T> {
 		String name;
 		Key(String n) {

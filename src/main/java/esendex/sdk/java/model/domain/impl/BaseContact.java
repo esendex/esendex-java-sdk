@@ -5,27 +5,17 @@ import esendex.sdk.java.model.types.ContactType;
 public class BaseContact {
 
 	private String id;
-	private String concurrencyId;
-	private String uri;
 	private String firstName;
 	private String lastName;
 	private String quickName;
 	private String mobileNumber;
-	private ContactType type;
-	
-	public BaseContact() {		
+    private String accountReference;
+
+	public BaseContact() {
 	}
 
 	public String getId() {
 		return id;
-	}
-	
-	public String getConcurrencyId() {
-		return concurrencyId;
-	}
-
-	public String getUri() {
-		return uri;
 	}
 
 	public String getFirstName() {
@@ -44,18 +34,14 @@ public class BaseContact {
 		return mobileNumber;
 	}
 
-	public ContactType getType() {
-		return type;
-	}
+    public String getAccountReference() {return accountReference;}
 
 	protected void setId(String id) {
 		this.id = id;
 	}
 
-	protected void setConcurrencyId(String concurrencyId) {
-		this.concurrencyId = concurrencyId;
-	}
-	
+    protected void setAccountReference(String accountReference) {this.accountReference = accountReference; }
+
 	protected void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -70,10 +56,6 @@ public class BaseContact {
 
 	protected void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
-	}
-
-	protected void setType(ContactType type) {
-		this.type = type;
 	}
 
 }

@@ -9,9 +9,9 @@ import esendex.sdk.java.model.domain.response.ContactResponse;
 
 /**
  * A ContactService is a service for creating, retrieving, updating and deleting
- * contact resources. All methods throw an EsendexException to indicate either 
- * a problem during the underlying connection or there was a none okay response. 
- * 
+ * contact resources. All methods throw an EsendexException to indicate either
+ * a problem during the underlying connection or there was a none okay response.
+ *
  * @author Mike Whittaker
  */
 public interface ContactService {
@@ -22,7 +22,7 @@ public interface ContactService {
 
 	ContactResponse getContact(String id) throws EsendexException;
 
-	List<ContactResponse> getContacts(int pageNumber, int pageSize) throws EsendexException;
+	List<ContactResponse> getContacts(int pageNumber, int pageSize, String accountReference) throws EsendexException;
 
 	ContactResponse updateContact(String id, ContactRequest contactRequest) throws EsendexException;
 

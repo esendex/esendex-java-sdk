@@ -36,14 +36,14 @@ import esendex.sdk.java.parser.XmlParser;
 /**
  * XmlParser that uses the XStream library to convert between XML and Dto
  * Objects.
- * 
+ *
  * @author Mike Whittaker
  */
 public class XStreamParser implements XmlParser {
-	
+
 	@SuppressWarnings("unused")
 	private static Log log = LogFactory.getLog(XStreamParser.class);
-	
+
 	private XStream xStream;
 
 	/**
@@ -52,8 +52,8 @@ public class XStreamParser implements XmlParser {
 	 * how to modify this configuration.
 	 */
 	public XStreamParser() {
-		
-		xStream = createXStream(); 
+
+		xStream = createXStream();
 
 		// General aliases
 		xStream.useAttributeFor(Dto.class, "id");
@@ -66,15 +66,18 @@ public class XStreamParser implements XmlParser {
 		// General converters
 		xStream.registerConverter(new EmptyToNullDateConverter());
 		xStream.registerConverter(new EsendexCasedEnumConverter());
-		
+
 		// Session
 		xStream.alias("session", SessionDto.class);
 
 		// Contacts
 		xStream.alias("contact", ContactDto.class);
         xStream.omitField(ContactDto.class, "groups");
+        xStream.omitField(ContactDto.class, "link");
+
 		xStream.alias("contacts", ContactCollectionDto.class);
 		xStream.addImplicitCollection(ContactCollectionDto.class, "contacts");
+        xStream.omitField(ContactCollectionDto.class, "link");
 
 		// Message (request)
 		xStream.alias("message", MessageRequestDto.class);
@@ -89,25 +92,25 @@ public class XStreamParser implements XmlParser {
 		// MessageHeader (response)
 		xStream.alias("body", BodyDto.class);
 		xStream.alias("messageheader", MessageResponseDto.class);
-	
+
 		// MessageHeaders (response)
 		xStream.useAttributeFor(MessageCollectionResponseDto.class, "batchid");
 		xStream.alias("messageheaders", MessageCollectionResponseDto.class);
 		xStream.addImplicitCollection(
-				MessageCollectionResponseDto.class, "messageheaders", 
+				MessageCollectionResponseDto.class, "messageheaders",
 				MessageResponseDto.class);
 	}
 
 	// configures the field order for the DTOs
 	private static XStream createXStream() {
-		SortableFieldKeySorter sorter = new SortableFieldKeySorter();		
+		SortableFieldKeySorter sorter = new SortableFieldKeySorter();
 		for(FieldOrder fo : FieldOrder.getFieldOrders()) {
 			sorter.registerFieldOrder(
 					fo.getFieldOrderClass(), fo.getFieldOrder());
-		}		
+		}
 		return new XStream(new PureJavaReflectionProvider(new FieldDictionary(sorter)));
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -129,12 +132,12 @@ public class XStreamParser implements XmlParser {
 	 */
 	@Override
 	public String toXml(Dto dto) {
-	
+
 		dto.setXmlns(EsendexProperties.instance().getProperty(
-				EsendexProperties.Key.NAMESPACE));	
-		
+				EsendexProperties.Key.NAMESPACE));
+
 		String declaration = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-		
+
 		StringWriter writer = new StringWriter();
 		xStream.marshal(dto, new CompactWriter(writer));
 		String xml = declaration + writer.toString();

@@ -22,7 +22,7 @@ public class ContactsServiceGetContactIT extends BaseTest {
     public static void whenGettingContacts() throws EsendexException {
 
         ContactService contactService = getFactory().getContactService();
-        expectedContacts = contactService.getContacts(0, 5);
+        expectedContacts = contactService.getContacts(0, 5, ACCOUNT);
 
         actualContacts = new Vector<ContactResponse>();
         for (ContactResponse expectedContact : expectedContacts) {
@@ -46,7 +46,6 @@ public class ContactsServiceGetContactIT extends BaseTest {
             assertEquals(actual.getFirstName(),expectedContact.getFirstName());
             assertEquals(actual.getLastName(),expectedContact.getLastName());
             assertEquals(actual.getId(),expectedContact.getId());
-            assertEquals(actual.getType(),expectedContact.getType());
         }
     }
 
