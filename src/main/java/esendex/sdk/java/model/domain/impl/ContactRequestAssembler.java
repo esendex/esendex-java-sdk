@@ -17,7 +17,7 @@ public class ContactRequestAssembler {
         dto.setFirstname(c.getFirstName());
         dto.setLastname(c.getLastName());
         dto.setQuickname(c.getQuickName());
-        dto.setMobilenumber(c.getMobileNumber());
+        dto.setPhoneNumber(c.getMobileNumber());
         dto.setAccountReference(c.getAccountReference());
 
         return dto;
@@ -34,11 +34,7 @@ public class ContactRequestAssembler {
         return new ContactCollectionDto(list);
     }
 
-	public ContactCollectionDto createCollection(ContactRequest contact) {
-
-		List<ContactDto> list = new ArrayList<ContactDto>();
-		list.add(createRequest(contact));
-		return new ContactCollectionDto(list);
+	public ContactDto createContactDto(ContactRequest contact) {
+        return createRequest(contact);
 	}
-
 }

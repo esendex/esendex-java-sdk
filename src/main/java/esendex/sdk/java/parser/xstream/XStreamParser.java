@@ -3,6 +3,8 @@ package esendex.sdk.java.parser.xstream;
 
 import java.io.StringWriter;
 
+import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
+import esendex.sdk.java.model.transfer.contact.NewContactDto;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -55,6 +57,9 @@ public class XStreamParser implements XmlParser {
 
 		xStream = createXStream();
 
+        xStream.processAnnotations(NewContactDto.class);
+        xStream.processAnnotations(ContactResponseDto.class);
+
 		// General aliases
 		xStream.useAttributeFor(Dto.class, "id");
 		xStream.useAttributeFor(Dto.class, "uri");
@@ -71,13 +76,14 @@ public class XStreamParser implements XmlParser {
 		xStream.alias("session", SessionDto.class);
 
 		// Contacts
-		xStream.alias("contact", ContactDto.class);
-        xStream.omitField(ContactDto.class, "groups");
-        xStream.omitField(ContactDto.class, "link");
+		//xStream.alias("contact", ContactDto.class);
+        //xStream.omitField(ContactDto.class, "groups");
+        //xStream.omitField(ContactDto.class, "link");
+        //xStream.omitField(ContactDto.class, "response");
 
-		xStream.alias("contacts", ContactCollectionDto.class);
-		xStream.addImplicitCollection(ContactCollectionDto.class, "contacts");
-        xStream.omitField(ContactCollectionDto.class, "link");
+		//xStream.alias("contacts", ContactCollectionDto.class);
+		//xStream.addImplicitCollection(ContactCollectionDto.class, "contacts");
+        //xStream.omitField(ContactCollectionDto.class, "link");
 
 		// Message (request)
 		xStream.alias("message", MessageRequestDto.class);
@@ -103,12 +109,14 @@ public class XStreamParser implements XmlParser {
 
 	// configures the field order for the DTOs
 	private static XStream createXStream() {
-		SortableFieldKeySorter sorter = new SortableFieldKeySorter();
+	/*	SortableFieldKeySorter sorter = new SortableFieldKeySorter();
 		for(FieldOrder fo : FieldOrder.getFieldOrders()) {
 			sorter.registerFieldOrder(
 					fo.getFieldOrderClass(), fo.getFieldOrder());
 		}
-		return new XStream(new PureJavaReflectionProvider(new FieldDictionary(sorter)));
+		return new XStream(new PureJavaReflectionProvider(new FieldDictionary(sorter)));*/
+
+        return new XStream();
 	}
 
 	/**

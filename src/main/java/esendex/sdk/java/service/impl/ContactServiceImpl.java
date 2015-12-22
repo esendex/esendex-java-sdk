@@ -40,32 +40,14 @@ public class ContactServiceImpl
 	 */
 	public ContactResponse createContact(ContactRequest contactRequest) throws EsendexException {
 
-		CreateContactResource resource
-			= new CreateContactResource(authenticator);
+		CreateContactResource resource = new CreateContactResource(authenticator);
+        ContactDto contactDto = new ContactRequestAssembler().createContactDto(contactRequest);
 
-		ContactCollectionDto dto =
-			new ContactRequestAssembler().createCollection(contactRequest);
-
-		resource.setRequestObject(dto);
+        resource.setRequestObject(contactDto);
 		resource.execute();
+
 		ContactDto resp = resource.getResponseObject();
 		return new ContactResponseAssembler().createResponse(resp);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public boolean createContacts(List<ContactRequest> contactRequests) throws EsendexException {
-
-		CreateContactsResource resource
-			= new CreateContactsResource(authenticator);
-
-		ContactCollectionDto dto =
-			new ContactRequestAssembler().createCollection(contactRequests);
-
-		resource.setRequestObject(dto);
-		resource.execute();
-		return resource.isHttpOkay();
 	}
 
 	/**

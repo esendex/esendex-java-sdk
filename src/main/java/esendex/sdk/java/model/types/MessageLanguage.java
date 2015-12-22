@@ -1,7 +1,6 @@
 
 package esendex.sdk.java.model.types;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Enum MessageLanguage.
  */
@@ -12,13 +11,13 @@ public enum MessageLanguage {
 	FR_FR ("fr-FR"),
 	ES_ES ("es-ES"),
 	DE_DE ("de-DE");
-	
+
 	private String representation;
 
 	private MessageLanguage(String representation) {
 		this.representation = representation;
 	}
-	
+
 	/**
 	 * To string.
 	 * @return the string {@inheritDoc}
@@ -27,6 +26,6 @@ public enum MessageLanguage {
 	public String toString() {
 		return representation;
 	}
-	
+
 
 }

@@ -12,7 +12,7 @@ import esendex.sdk.java.service.resource.base.XmlRequesterResponderResource;
  * return a Contact response.
  * @author Mike Whittaker
  */
-public class CreateContactResource extends XmlRequesterResponderResource<ContactCollectionDto, ContactDto> {
+public class CreateContactResource extends XmlRequesterResponderResource<ContactDto, ContactDto> {
 
 	/**
 	 * Instantiates a new creates the contact resource.

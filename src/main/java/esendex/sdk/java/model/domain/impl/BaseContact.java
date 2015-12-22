@@ -1,7 +1,5 @@
 package esendex.sdk.java.model.domain.impl;
 
-import esendex.sdk.java.model.types.ContactType;
-
 public class BaseContact {
 
 	private String id;

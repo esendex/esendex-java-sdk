@@ -1,12 +1,9 @@
 
 package esendex.sdk.java.model.transfer.contact;
 
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import esendex.sdk.java.model.transfer.Dto;
-import esendex.sdk.java.model.types.ContactType;
 
-import java.util.List;
-
-// TODO: Auto-generated Javadoc
 /**
  * Base class for contact requests and responses.  This class directly holds the
  * parsed xml data. Subclasses should merely allow selective access.
@@ -19,6 +16,9 @@ public class ContactDto extends Dto {
 	private String quickname;
 	private String phonenumber;
     private String accountreference;
+
+    @XStreamOmitField
+    private String link;
 
 	public ContactDto() {
 	}
@@ -55,9 +55,9 @@ public class ContactDto extends Dto {
 
 	/**
 	 * The telephone number associated with this Contact.
-	 * @return the mobile number
+	 * @return the phone number
 	 */
-	public String getMobilenumber() {
+	public String getPhoneNumber() {
 		return phonenumber;
 	}
 
@@ -95,12 +95,12 @@ public class ContactDto extends Dto {
 	}
 
 	/**
-	 * Sets the mobilenumber.
-	 * @param mobilenumber the mobile number to set
-	 * @see #getMobilenumber()
+	 * Sets the phonenumber.
+	 * @param phonenumber the mobile number to set
+	 * @see #getPhoneNumber()
 	 */
-	public void setMobilenumber(String mobilenumber) {
-		this.phonenumber = mobilenumber;
+	public void setPhoneNumber(String phonenumber) {
+		this.phonenumber = phonenumber;
 	}
 
     /**

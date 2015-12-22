@@ -18,8 +18,6 @@ public interface ContactService {
 
 	ContactResponse createContact(ContactRequest contactRequest) throws EsendexException;
 
-	boolean createContacts(List<ContactRequest> contactRequests) throws EsendexException;
-
     /**
      * @param id the id of the desired contact
      */

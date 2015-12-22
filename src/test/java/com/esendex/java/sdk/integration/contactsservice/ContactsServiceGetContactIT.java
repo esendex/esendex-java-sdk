@@ -2,6 +2,7 @@ package com.esendex.java.sdk.integration.contactsservice;
 
 import com.esendex.java.sdk.BaseTest;
 import esendex.sdk.java.EsendexException;
+import esendex.sdk.java.model.domain.request.ContactRequest;
 import esendex.sdk.java.model.domain.response.ContactResponse;
 import esendex.sdk.java.service.ContactService;
 import org.junit.BeforeClass;
@@ -24,6 +25,8 @@ public class ContactsServiceGetContactIT extends BaseTest {
         ContactService contactService = getFactory().getContactService();
         expectedContacts = contactService.getContacts(0, 5, ACCOUNT);
 
+        ContactResponse contactResponse = contactService.createContact(new ContactRequest("lol", "44876541224", "Esendex Exchange"));
+
         actualContacts = new Vector<ContactResponse>();
         for (ContactResponse expectedContact : expectedContacts) {
             String contactId = expectedContact.getId();
@@ -31,7 +34,6 @@ public class ContactsServiceGetContactIT extends BaseTest {
 
             actualContacts.add(contact);
         }
-
     }
 
     @Test
@@ -46,6 +48,7 @@ public class ContactsServiceGetContactIT extends BaseTest {
             assertEquals(actual.getFirstName(),expectedContact.getFirstName());
             assertEquals(actual.getLastName(),expectedContact.getLastName());
             assertEquals(actual.getId(),expectedContact.getId());
+            assertEquals(actual.getAccountReference(), expectedContact.getAccountReference());
         }
     }
 

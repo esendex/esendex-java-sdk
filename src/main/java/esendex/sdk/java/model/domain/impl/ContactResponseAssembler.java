@@ -17,7 +17,7 @@ public class ContactResponseAssembler {
 		resp.setId(dto.getId());
         resp.setAccountReference(dto.getAccountReference());
 		resp.setLastName(dto.getLastname());
-		resp.setMobileNumber(dto.getMobilenumber());
+		resp.setMobileNumber(dto.getPhoneNumber());
 		resp.setQuickName(dto.getQuickname());
 
 		return resp;

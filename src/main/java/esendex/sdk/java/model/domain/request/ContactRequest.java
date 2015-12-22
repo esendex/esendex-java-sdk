@@ -2,7 +2,6 @@
 package esendex.sdk.java.model.domain.request;
 
 import esendex.sdk.java.model.domain.impl.BaseContact;
-import esendex.sdk.java.model.types.ContactType;
 
 /**
  * A request object suitable for creating and updating a Contact resource.
@@ -24,6 +23,8 @@ public class ContactRequest extends BaseContact {
 		setQuickName(quickName);
 		setMobileNumber(mobileNumber);
         setAccountReference(accountReference);
+        setFirstName("");
+        setLastName("");
 	}
 
 	/**
