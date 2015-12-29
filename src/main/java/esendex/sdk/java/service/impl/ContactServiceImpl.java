@@ -10,10 +10,10 @@ import esendex.sdk.java.model.domain.request.ContactRequest;
 import esendex.sdk.java.model.domain.response.ContactResponse;
 import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
 import esendex.sdk.java.model.transfer.contact.ContactDto;
+import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
 import esendex.sdk.java.service.ContactService;
 import esendex.sdk.java.service.auth.Authenticator;
 import esendex.sdk.java.service.resource.contact.CreateContactResource;
-import esendex.sdk.java.service.resource.contact.CreateContactsResource;
 import esendex.sdk.java.service.resource.contact.DeleteContactResource;
 import esendex.sdk.java.service.resource.contact.RetrieveContactResource;
 import esendex.sdk.java.service.resource.contact.RetrieveContactsResource;
@@ -46,8 +46,8 @@ public class ContactServiceImpl
         resource.setRequestObject(contactDto);
 		resource.execute();
 
-		ContactDto resp = resource.getResponseObject();
-		return new ContactResponseAssembler().createResponse(resp);
+		ContactResponseDto resp = resource.getResponseObject();
+		return new ContactResponseAssembler().createResponse(resp.getContact());
 	}
 
 	/**

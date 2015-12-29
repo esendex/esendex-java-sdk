@@ -25,8 +25,6 @@ public class ContactsServiceGetContactIT extends BaseTest {
         ContactService contactService = getFactory().getContactService();
         expectedContacts = contactService.getContacts(0, 5, ACCOUNT);
 
-        ContactResponse contactResponse = contactService.createContact(new ContactRequest("lol", "44876541224", "Esendex Exchange"));
-
         actualContacts = new Vector<ContactResponse>();
         for (ContactResponse expectedContact : expectedContacts) {
             String contactId = expectedContact.getId();

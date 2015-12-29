@@ -1,128 +1,74 @@
 
 package esendex.sdk.java.model.transfer.contact;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import esendex.sdk.java.model.transfer.Dto;
+import esendex.sdk.java.model.transfer.LinkDto;
 
-/**
- * Base class for contact requests and responses.  This class directly holds the
- * parsed xml data. Subclasses should merely allow selective access.
- * @author Mike Whittaker
- */
+import java.util.ArrayList;
+import java.util.List;
+
+@XStreamAlias("contact")
 public class ContactDto extends Dto {
 
+	@XStreamAlias("firstname")
 	private String firstname;
+
+	@XStreamAlias("lastname")
 	private String lastname;
+
+	@XStreamAlias("quickname")
 	private String quickname;
+
+	@XStreamAlias("phonenumber")
 	private String phonenumber;
-    private String accountreference;
 
-    @XStreamOmitField
-    private String link;
+	@XStreamAlias("accountreference")
+	private String accountreference;
 
-	public ContactDto() {
-	}
+	@XStreamImplicit(itemFieldName = "link")
+	private List link = new ArrayList();
 
 
-	/**
-	 * The first name of this Contact. This may not be returned if the property
-	 * has not been set for the Contact.
-	 * @return the contacts first name
-	 */
 	public String getFirstname() {
 		return firstname;
 	}
 
-	/**
-	 * The last name of this Contact. This may not be returned if
-	 * the property has not been set for the Contact.
-	 * @return the contacts last name
-	 */
-	public String getLastname() {
-		return lastname;
-	}
-
-	/**
-	 * This is the human-friendly shortcut for the Contact and can be used as
-	 * a Message recipient instead of a telephone number. Where firstname
-	 * and lastname have been set when the Contact was created, it may be a
-	 * concatenation of these two values.
-	 * @return the contacts quickname
-	 */
-	public String getQuickname() {
-		return quickname;
-	}
-
-	/**
-	 * The telephone number associated with this Contact.
-	 * @return the phone number
-	 */
-	public String getPhoneNumber() {
-		return phonenumber;
-	}
-
-    /**
-     * The accountReference associated with this Contact.
-     * @return the Account Reference
-     */
-    public String getAccountReference() {return accountreference; }
-
-	/**
-	 * Sets the firstname.
-	 * @param firstname the first name to set
-	 * @see #getFirstname()
-	 */
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
 
-	/**
-	 * Sets the lastname.
-	 * @param lastname the last name to set
-	 * @see #getLastname()
-	 */
+	public String getLastname() {
+		return lastname;
+	}
+
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
 
-	/**
-	 * Sets the quickname.
-	 * @param quickname the quick name to set
-	 * @see #getQuickname()
-	 */
+	public String getQuickname() {
+		return quickname;
+	}
+
 	public void setQuickname(String quickname) {
 		this.quickname = quickname;
 	}
 
-	/**
-	 * Sets the phonenumber.
-	 * @param phonenumber the mobile number to set
-	 * @see #getPhoneNumber()
-	 */
+	public String getPhoneNumber() {
+		return phonenumber;
+	}
+
 	public void setPhoneNumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 
-    /**
-     * Sets the type.
-     * @param accountReference the accountReference to set
-     * @see #getAccountReference() ()
-     */
-    public void setAccountReference(String accountReference) {
-        this.accountreference = accountReference;
-    }
+	public String getAccountReference() {
+		return accountreference;
+	}
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public String toString() {
-
-        return super.toString() +
-                "\nfirstname:" + firstname +
-                "\nlastname:" + lastname +
-                "\nquickname:" + quickname +
-                "\nmobilenumber:" + phonenumber +
-                "\naccountreference:" + accountreference;
-    }
+	public void setAccountReference(String accountreference) {
+		this.accountreference = accountreference;
+	}
 }

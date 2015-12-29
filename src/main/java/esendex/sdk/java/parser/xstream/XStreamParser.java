@@ -3,15 +3,14 @@ package esendex.sdk.java.parser.xstream;
 
 import java.io.StringWriter;
 
+import esendex.sdk.java.model.transfer.LinkDto;
+import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
+import esendex.sdk.java.model.transfer.contact.ContactDto;
 import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
-import esendex.sdk.java.model.transfer.contact.NewContactDto;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.converters.reflection.FieldDictionary;
-import com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider;
-import com.thoughtworks.xstream.converters.reflection.SortableFieldKeySorter;
 import com.thoughtworks.xstream.io.StreamException;
 import com.thoughtworks.xstream.io.xml.CompactWriter;
 import com.thoughtworks.xstream.mapper.CannotResolveClassException;
@@ -19,10 +18,7 @@ import com.thoughtworks.xstream.mapper.CannotResolveClassException;
 import esendex.sdk.java.EsendexException;
 import esendex.sdk.java.EsendexProperties;
 import esendex.sdk.java.model.transfer.Dto;
-import esendex.sdk.java.model.transfer.FieldOrder;
 import esendex.sdk.java.model.transfer.PageableDto;
-import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
-import esendex.sdk.java.model.transfer.contact.ContactDto;
 import esendex.sdk.java.model.transfer.message.BodyDto;
 import esendex.sdk.java.model.transfer.message.MessageCollectionRequestDto;
 import esendex.sdk.java.model.transfer.message.MessageCollectionResponseDto;
@@ -57,8 +53,6 @@ public class XStreamParser implements XmlParser {
 
 		xStream = createXStream();
 
-        xStream.processAnnotations(NewContactDto.class);
-        xStream.processAnnotations(ContactResponseDto.class);
 
 		// General aliases
 		xStream.useAttributeFor(Dto.class, "id");
@@ -76,14 +70,13 @@ public class XStreamParser implements XmlParser {
 		xStream.alias("session", SessionDto.class);
 
 		// Contacts
-		//xStream.alias("contact", ContactDto.class);
-        //xStream.omitField(ContactDto.class, "groups");
-        //xStream.omitField(ContactDto.class, "link");
-        //xStream.omitField(ContactDto.class, "response");
+		xStream.alias("contacts", ContactCollectionDto.class);
+		xStream.addImplicitCollection(ContactCollectionDto.class, "contacts");
+        xStream.omitField(ContactCollectionDto.class, "link");
 
-		//xStream.alias("contacts", ContactCollectionDto.class);
-		//xStream.addImplicitCollection(ContactCollectionDto.class, "contacts");
-        //xStream.omitField(ContactCollectionDto.class, "link");
+		xStream.processAnnotations(ContactDto.class);
+		xStream.processAnnotations(ContactResponseDto.class);
+		xStream.processAnnotations(LinkDto.class);
 
 		// Message (request)
 		xStream.alias("message", MessageRequestDto.class);
@@ -123,9 +116,9 @@ public class XStreamParser implements XmlParser {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Dto fromXml(String xml) throws EsendexException {
+	public Object fromXml(String xml) throws EsendexException {
 		try {
-			return (Dto)xStream.fromXML(xml);
+			return xStream.fromXML(xml);
 		} catch (ClassCastException ex) {
 			throw new UnmappableException("Could not map to a Dto", ex);
 		} catch (StreamException ex) {

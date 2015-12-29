@@ -4,6 +4,7 @@ package esendex.sdk.java.service.resource.contact;
 import esendex.sdk.java.http.HttpRequestMethod;
 import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
 import esendex.sdk.java.model.transfer.contact.ContactDto;
+import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
 import esendex.sdk.java.service.auth.Authenticator;
 import esendex.sdk.java.service.resource.base.XmlRequesterResponderResource;
 
@@ -12,7 +13,7 @@ import esendex.sdk.java.service.resource.base.XmlRequesterResponderResource;
  * return a Contact response.
  * @author Mike Whittaker
  */
-public class CreateContactResource extends XmlRequesterResponderResource<ContactDto, ContactDto> {
+public class CreateContactResource extends XmlRequesterResponderResource<ContactDto, ContactResponseDto> {
 
 	/**
 	 * Instantiates a new creates the contact resource.

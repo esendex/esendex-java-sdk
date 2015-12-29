@@ -1,20 +1,31 @@
 
 package esendex.sdk.java.model.transfer;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+
 /**
  * Base xml resource class. This is the superclass for all xml resources.
- * When a Dto is the root xml entity then the xml namespace (xmlns) 
- * attribute will be set. Any Dto may have a URI attribute to provide 
+ * When a Dto is the root xml entity then the xml namespace (xmlns)
+ * attribute will be set. Any Dto may have a URI attribute to provide
  * access to a more complete resource
- * 
+ *
  * @author Mike Whittaker
  */
 public abstract class Dto {
-	
+
+	@XStreamAlias("id")
+	@XStreamAsAttribute
 	private String id;
+
+	@XStreamAlias("uri")
+	@XStreamAsAttribute
 	private String uri;
+
+	@XStreamAlias("xmlns")
+	@XStreamAsAttribute
 	private String xmlns;
-	
+
 	public Dto() {
 	}
 
@@ -57,7 +68,7 @@ public abstract class Dto {
 	public void setUri(String uri) {
 		this.uri = uri;
 	}
-	
+
 	public void setXmlns(String xmlns) {
 		this.xmlns = xmlns;
 	}
@@ -66,7 +77,7 @@ public abstract class Dto {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String toString() {		
+	public String toString() {
 		return "id: " + id +
 			"\nuri: " + uri +
 			"\nxmlns: " + xmlns;

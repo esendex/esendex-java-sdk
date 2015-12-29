@@ -14,7 +14,7 @@ import esendex.sdk.java.service.auth.Authenticator;
  * @param <S> the Dto type expected in the response
  * @author Mike Whittaker
  */
-public abstract class XmlRequesterResponderResource<Q extends Dto, S extends Dto> extends Resource {
+public abstract class XmlRequesterResponderResource<Q extends Dto, S > extends Resource {
 
 	private XmlRequester<Q> requester;
 	private XmlResponder<S> responder;

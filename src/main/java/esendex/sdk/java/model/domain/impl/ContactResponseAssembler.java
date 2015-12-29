@@ -20,6 +20,7 @@ public class ContactResponseAssembler {
 		resp.setMobileNumber(dto.getPhoneNumber());
 		resp.setQuickName(dto.getQuickname());
 
+
 		return resp;
 	}
 

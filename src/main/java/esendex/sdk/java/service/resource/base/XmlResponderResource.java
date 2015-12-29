@@ -12,7 +12,7 @@ import esendex.sdk.java.service.auth.Authenticator;
  *
  * @param <S> the Dto type that is expected in response
  */
-public abstract class XmlResponderResource<S extends Dto> extends Resource {
+public abstract class XmlResponderResource<S> extends Resource {
 
 	private XmlResponder<S> responder;
 
