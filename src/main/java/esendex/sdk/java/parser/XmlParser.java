@@ -10,7 +10,7 @@ import esendex.sdk.java.model.transfer.Dto;
  * @author Mike Whittaker
  */
 public interface XmlParser {
-	
+
 	/**
 	 * Converts if possible, a String, that must be in XML format, to a Dto.
 	 * @param xml the character data to be converted
@@ -18,7 +18,7 @@ public interface XmlParser {
 	 * @throws EsendexException if there is any problem reading or parseing the
 	 *	XML.
 	 */
-	Dto fromXml(String xml) throws EsendexException;
+	Object fromXml(String xml) throws EsendexException;
 
 	/**
 	 * Converts a Dto Object to XML character data.

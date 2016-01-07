@@ -8,7 +8,7 @@ import esendex.sdk.java.service.resource.base.XmlRequesterResponderResource;
 
 /**
  * This operation will amend an existing contact.
- * 
+ *
  * @author Mike Whittaker
  */
 public class UpdateContactResource extends XmlRequesterResponderResource<ContactDto, ContactDto> {
@@ -19,9 +19,9 @@ public class UpdateContactResource extends XmlRequesterResponderResource<Contact
 	 * @param id the id
 	 */
 	public UpdateContactResource(Authenticator auth, String id) {
-		super(auth, null, id, null);
+		super(auth, null, id, null, "2.0");
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

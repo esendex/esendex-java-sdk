@@ -14,7 +14,7 @@ public class EmptyToNullDateConverter extends DateConverter {
 
 	/**
 	 * Instantiates a new empty to null date converter.
-	 * @param format the format
+	 *
 	 */
 	public EmptyToNullDateConverter() {
 		super(UTCDateFormat, new String[]{LocalDateFormat});

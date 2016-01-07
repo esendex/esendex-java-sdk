@@ -20,12 +20,12 @@ import esendex.sdk.java.service.impl.SessionServiceFactoryImpl;
 /**
  * A factory for services.  A service is the fundamental developer interface to
  * the Esendex resources. A new ServiceFactory should be created for every
- * Authentication identity.  
- * 
+ * Authentication identity.
+ *
  * @author Mike Whittaker
  */
 public abstract class ServiceFactory implements IServiceFactory  {
-	
+
 	protected Authenticator authenticator;
 
 	/**
@@ -47,7 +47,7 @@ public abstract class ServiceFactory implements IServiceFactory  {
 			UserPassword userPassword) throws EsendexException {
 		return new SessionServiceFactoryImpl(userPassword);
 	}
-	
+
 	/**
 	 * Create a ServiceFactory whose services will connect using Basic
 	 * authentication.
@@ -83,13 +83,13 @@ public abstract class ServiceFactory implements IServiceFactory  {
 		return new InboxServiceImpl(authenticator);
 	}
 
-	/**
-	 * Obtains a service suitable for create, read, update and delete
-	 * operations on the users contacts.
-	 * @return the service
-	 */
+    /**
+     * Obtains a service suitable for create, read, update and delete
+     * operations on the users contacts.
+     * @return the service
+     */
 	public ContactService getContactService() {
 		return new ContactServiceImpl(authenticator);
 	}
-	
+
 }

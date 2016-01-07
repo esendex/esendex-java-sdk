@@ -2,7 +2,6 @@
 package esendex.sdk.java.model.domain.request;
 
 import esendex.sdk.java.model.domain.impl.BaseContact;
-import esendex.sdk.java.model.types.ContactType;
 
 /**
  * A request object suitable for creating and updating a Contact resource.
@@ -15,17 +14,20 @@ public class ContactRequest extends BaseContact {
 	 * mobile number.
 	 * @param quickName the quickname
 	 * @param mobileNumber the mobile number
+     * @param accountReference the account reference
 	 */
-	public ContactRequest(String quickName, String mobileNumber) {
-		if (quickName == null || mobileNumber == null) 
+	public ContactRequest(String quickName, String mobileNumber, String accountReference) {
+		if (quickName == null || mobileNumber == null || accountReference == null)
 			throw new NullPointerException("arguments can not be null");
 
 		setQuickName(quickName);
 		setMobileNumber(mobileNumber);
-		setType(ContactType.ESENDEX);
+        setAccountReference(accountReference);
+        setFirstName("");
+        setLastName("");
 	}
-	
-	/** 
+
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -33,7 +35,7 @@ public class ContactRequest extends BaseContact {
 		super.setFirstName(firstName);
 	}
 
-	/** 
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -41,7 +43,7 @@ public class ContactRequest extends BaseContact {
 		super.setId(id);
 	}
 
-	/** 
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -49,7 +51,7 @@ public class ContactRequest extends BaseContact {
 		super.setLastName(lastName);
 	}
 
-	/** 
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -57,7 +59,7 @@ public class ContactRequest extends BaseContact {
 		super.setMobileNumber(mobileNumber);
 	}
 
-	/** 
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -65,19 +67,12 @@ public class ContactRequest extends BaseContact {
 		super.setQuickName(quickName);
 	}
 
-	/** 
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void setType(ContactType type) {
-		super.setType(type);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void setAccountReference(String accountReference) {
+        super.setAccountReference(accountReference);
+    }
 
-	/** 
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void setConcurrencyId(String concurrencyId) {
-		super.setConcurrencyId(concurrencyId);
-	}
 }

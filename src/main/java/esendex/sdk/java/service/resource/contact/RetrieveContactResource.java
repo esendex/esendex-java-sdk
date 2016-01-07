@@ -7,12 +7,12 @@ import esendex.sdk.java.service.auth.Authenticator;
 import esendex.sdk.java.service.resource.base.XmlResponderResource;
 
 /**
- * This operation returns a contact response for an individual contact 
+ * This operation returns a contact response for an individual contact
  * identified by GUID.
- * 
+ *
  * @author Mike Whittaker
  */
-public class RetrieveContactResource extends XmlResponderResource<ContactDto> { 
+public class RetrieveContactResource extends XmlResponderResource<ContactDto> {
 
 	/**
 	 * Instantiates a new retrieve contact resource.
@@ -20,9 +20,9 @@ public class RetrieveContactResource extends XmlResponderResource<ContactDto> {
 	 * @param id the id
 	 */
 	public RetrieveContactResource(Authenticator auth, String id) {
-		super(auth, null, id, null);
+		super(auth, null, id, null, "2.0");
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -39,5 +39,5 @@ public class RetrieveContactResource extends XmlResponderResource<ContactDto> {
 	protected HttpRequestMethod getRequestMethod() {
 		return HttpRequestMethod.GET;
 	}
-	
+
 }

@@ -36,9 +36,9 @@ public class HttpConnectorImpl implements HttpConnector {
             HttpURLConnection uc = createHttpRequest(url, method, authenticator, data);
 
             return executeHttpRequest(uc);
-			
+
 		} catch (IOException ex) {
-			
+
 			throw new HttpException("Failed connection to: " + url, ex);
 		}
 
@@ -55,7 +55,7 @@ public class HttpConnectorImpl implements HttpConnector {
         }
 
         String response = null;
-        if (HttpURLConnection.HTTP_OK == respCode) {
+        if (HttpURLConnection.HTTP_OK == respCode || HttpURLConnection.HTTP_CREATED == respCode ) {
 
             response = readHttpResponse(uc);
         }

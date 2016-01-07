@@ -30,11 +30,11 @@ public interface IServiceFactory {
 	 */
 	InboxService getInboxService();
 
-	/**
-	 * Obtains a service suitable for create, read, update and delete
-	 * operations on the users contacts.
-	 * @return the service
-	 */
+    /**
+     * Obtains a service suitable for create, read, update and delete
+     * operations on the users contacts.
+     * @return the service
+     */
 	ContactService getContactService();
 
 }

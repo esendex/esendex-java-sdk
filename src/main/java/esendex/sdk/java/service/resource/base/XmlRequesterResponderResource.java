@@ -7,18 +7,18 @@ import esendex.sdk.java.model.transfer.Dto;
 import esendex.sdk.java.service.auth.Authenticator;
 
 /**
- * An XmlRequesterResponderResource is a resource that receives and sends 
+ * An XmlRequesterResponderResource is a resource that receives and sends
  * XML data
- * 
+ *
  * @param <Q> the Dto type expected in the request
  * @param <S> the Dto type expected in the response
  * @author Mike Whittaker
  */
-public abstract class XmlRequesterResponderResource<Q extends Dto, S extends Dto> extends Resource {
+public abstract class XmlRequesterResponderResource<Q extends Dto, S > extends Resource {
 
 	private XmlRequester<Q> requester;
 	private XmlResponder<S> responder;
-	
+
 	/**
 	 * Instantiates a new xml requester responder resource.
 	 * @param auth the authenticator
@@ -26,9 +26,13 @@ public abstract class XmlRequesterResponderResource<Q extends Dto, S extends Dto
 	 * @param id the id
 	 * @param query the query
 	 */
-	public XmlRequesterResponderResource(Authenticator auth, String account, String id, HttpQuery query) {
-		super(auth, account, id, query);
+	public XmlRequesterResponderResource(Authenticator auth, String account, String id, HttpQuery query, String version) {
+		super(auth, account, id, query, version);
 	}
+
+    public XmlRequesterResponderResource(Authenticator auth, String account, String id, HttpQuery query) {
+        super(auth, account, id, query, "1.0");
+    }
 
 	/**
 	 * Sets the request object.
@@ -37,7 +41,7 @@ public abstract class XmlRequesterResponderResource<Q extends Dto, S extends Dto
 	public void setRequestObject(Q requestDto) {
 		this.requester = new XmlRequester<Q>(requestDto);
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -45,7 +49,7 @@ public abstract class XmlRequesterResponderResource<Q extends Dto, S extends Dto
 	protected String getRequestData() {
 		return requester.getRequestData();
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -54,7 +58,7 @@ public abstract class XmlRequesterResponderResource<Q extends Dto, S extends Dto
 		super.execute();
 		responder = new XmlResponder<S>(getResponse().getContent());
 	}
-	
+
 	/**
 	 * Gets the response object.
 	 * @return the response object
