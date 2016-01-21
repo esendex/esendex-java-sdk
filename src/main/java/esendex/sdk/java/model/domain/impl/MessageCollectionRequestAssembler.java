@@ -20,6 +20,7 @@ public class MessageCollectionRequestAssembler {
 		dto.setFrom(request.getFrom());
 		dto.setType(request.getMessageType());
 		dto.setValidity(request.getValidity());
+		dto.setCharacterSet(request.getCharacterSet());
 	}
 	
 	public MessageCollectionRequestAssembler(

@@ -7,7 +7,6 @@ import java.util.List;
 
 import esendex.sdk.java.model.types.MessageType;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MessageCollectionRequest.
  * @param <T> the generic type

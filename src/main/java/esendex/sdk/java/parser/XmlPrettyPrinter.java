@@ -11,7 +11,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * Pretty printer for the formating of XML in a neat indented fashion.
  * 

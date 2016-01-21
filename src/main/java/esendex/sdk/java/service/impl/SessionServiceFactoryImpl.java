@@ -7,7 +7,7 @@ import esendex.sdk.java.service.SessionServiceFactory;
 import esendex.sdk.java.service.auth.SessionAuthenticator;
 import esendex.sdk.java.service.auth.UserPassword;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class SessionServiceFactoryImpl.
  */

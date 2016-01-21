@@ -1,6 +1,7 @@
 
 package esendex.sdk.java.model.domain.impl;
 
+import esendex.sdk.java.model.types.CharacterSet;
 import esendex.sdk.java.model.types.MessageType;
 
 /**
@@ -11,7 +12,8 @@ public abstract class BaseMessageRequest {
 
 	private String from;	
 	private Integer validity;
-	private MessageType messageType;	
+	private MessageType messageType;
+	private CharacterSet characterSet;
 
 	public BaseMessageRequest(MessageType type) {
 		this.messageType = type;
@@ -27,6 +29,14 @@ public abstract class BaseMessageRequest {
 
 	public Integer getValidity() {
 		return validity;
+	}
+
+	public CharacterSet getCharacterSet() {
+		return characterSet;
+	}
+
+	public void setCharacterSet(CharacterSet characterSet) {
+		this.characterSet = characterSet;
 	}
 
 	/**
@@ -61,6 +71,6 @@ public abstract class BaseMessageRequest {
 			"\nvalidity: " + validity +
 			"\nmessageType: " + messageType;
 	}
-	
-	
+
+
 }

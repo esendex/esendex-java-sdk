@@ -1,7 +1,6 @@
 
 package esendex.sdk.java.model.transfer.message;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MessageRequest.
  */

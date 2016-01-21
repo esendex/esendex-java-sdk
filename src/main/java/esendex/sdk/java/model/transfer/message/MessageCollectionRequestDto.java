@@ -4,7 +4,6 @@ package esendex.sdk.java.model.transfer.message;
 import java.util.Date;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MessageCollectionRequestDto.
  */
