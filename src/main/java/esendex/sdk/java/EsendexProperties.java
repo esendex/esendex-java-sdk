@@ -18,6 +18,7 @@ public class EsendexProperties {
 		VERSION 	("esendex.version"),
 		NAMESPACE 	("esendex.namespace"),
 		DOMAIN 		("esendex.domain"),
+		SURVEYS_DOMAIN("esendex.surveys_domain"),
 		PORT 		("esendex.port"),
         BUILD_VERSION("esendex.build_version");
 		

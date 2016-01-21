@@ -7,6 +7,10 @@ import esendex.sdk.java.model.transfer.LinkDto;
 import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
 import esendex.sdk.java.model.transfer.contact.ContactDto;
 import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
+import esendex.sdk.java.model.transfer.surveys.RecipientDto;
+import esendex.sdk.java.model.transfer.surveys.RecipientsDto;
+import esendex.sdk.java.model.transfer.surveys.TemplateFieldDto;
+import esendex.sdk.java.model.transfer.surveys.TemplateFieldsDto;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -78,6 +82,12 @@ public class XStreamParser implements XmlParser {
 		xStream.processAnnotations(ContactResponseDto.class);
 		xStream.processAnnotations(LinkDto.class);
 
+		//Surveys
+		xStream.processAnnotations(RecipientDto.class);
+		xStream.processAnnotations(RecipientsDto.class);
+		xStream.processAnnotations(TemplateFieldDto.class);
+		xStream.processAnnotations(TemplateFieldsDto.class);
+
 		// Message (request)
 		xStream.alias("message", MessageRequestDto.class);
 		xStream.addImmutableType(MessageRequestDto.class);
@@ -102,13 +112,6 @@ public class XStreamParser implements XmlParser {
 
 	// configures the field order for the DTOs
 	private static XStream createXStream() {
-	/*	SortableFieldKeySorter sorter = new SortableFieldKeySorter();
-		for(FieldOrder fo : FieldOrder.getFieldOrders()) {
-			sorter.registerFieldOrder(
-					fo.getFieldOrderClass(), fo.getFieldOrder());
-		}
-		return new XStream(new PureJavaReflectionProvider(new FieldDictionary(sorter)));*/
-
         return new XStream();
 	}
 

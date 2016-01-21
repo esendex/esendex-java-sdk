@@ -1,10 +1,7 @@
 
 package esendex.sdk.java.service.impl;
 
-import esendex.sdk.java.service.ContactService;
-import esendex.sdk.java.service.InboxService;
-import esendex.sdk.java.service.MessagingService;
-import esendex.sdk.java.service.SentService;
+import esendex.sdk.java.service.*;
 
 /**
  * A factory for creating IService objects.
@@ -37,4 +34,9 @@ public interface IServiceFactory {
      */
 	ContactService getContactService();
 
+	/**
+	 * Obtains a service suitable for operations on the surveys resource.
+	 * @return the service
+	 */
+	SurveysService getSurveysService();
 }

@@ -1,21 +1,10 @@
 
 package esendex.sdk.java;
 
-import esendex.sdk.java.service.BasicServiceFactory;
-import esendex.sdk.java.service.ContactService;
-import esendex.sdk.java.service.InboxService;
-import esendex.sdk.java.service.MessagingService;
-import esendex.sdk.java.service.SentService;
-import esendex.sdk.java.service.SessionServiceFactory;
+import esendex.sdk.java.service.*;
 import esendex.sdk.java.service.auth.Authenticator;
 import esendex.sdk.java.service.auth.UserPassword;
-import esendex.sdk.java.service.impl.BasicServiceFactoryImpl;
-import esendex.sdk.java.service.impl.ContactServiceImpl;
-import esendex.sdk.java.service.impl.IServiceFactory;
-import esendex.sdk.java.service.impl.InboxServiceImpl;
-import esendex.sdk.java.service.impl.MessagingServiceImpl;
-import esendex.sdk.java.service.impl.SentServiceImpl;
-import esendex.sdk.java.service.impl.SessionServiceFactoryImpl;
+import esendex.sdk.java.service.impl.*;
 
 /**
  * A factory for services.  A service is the fundamental developer interface to
@@ -84,12 +73,20 @@ public abstract class ServiceFactory implements IServiceFactory  {
 	}
 
     /**
-     * Obtains a service suitable for create, read, update and delete
-     * operations on the users contacts.
-     * @return the service
-     */
+			* Obtains a service suitable for create, read, update and delete
+	* operations on the users contacts.
+	* @return the service
+	*/
 	public ContactService getContactService() {
 		return new ContactServiceImpl(authenticator);
+	}
+
+	/**
+	 * Obtains a service suitable for operations on the surveys resource.
+	 * @return the service
+	 */
+	public SurveysService getSurveysService() {
+		return new SurveysServiceImpl(authenticator);
 	}
 
 }

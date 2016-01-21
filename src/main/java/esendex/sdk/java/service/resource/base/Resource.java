@@ -27,7 +27,8 @@ public abstract class Resource {
 
 	private static final Log log = LogFactory.getLog(Resource.class);
 
-    private String version;
+	private String domain;
+	private String version;
     private HttpResponse httpResponse;
 	private String account;
 	private String id;
@@ -35,6 +36,15 @@ public abstract class Resource {
 	private String baseUrl;
 	private Authenticator authenticator;
 
+	public Resource(Authenticator auth, String id, HttpQuery query, String version, String domain) {
+
+		this.id = id;
+		this.query = query;
+		this.authenticator = auth;
+		this.version = version;
+		this.domain = domain;
+		baseUrl = createParentEndpoint(domain);
+	}
 
 	public Resource(Authenticator auth, String account, String id, HttpQuery query, String version) {
 
@@ -43,7 +53,7 @@ public abstract class Resource {
 		this.query = query;
 		this.authenticator = auth;
         this.version = version;
-		baseUrl = createParentEndpoint();
+		baseUrl = createParentEndpoint(null);
 	}
 
     /**
@@ -60,19 +70,27 @@ public abstract class Resource {
         this.id = id;
         this.query = query;
         this.authenticator = auth;
-        baseUrl = createParentEndpoint();
+        baseUrl = createParentEndpoint(null);
     }
 
-	private String createParentEndpoint() {
+	private String createParentEndpoint(String domain) {
+
 		EsendexProperties props = EsendexProperties.instance();
 		StringBuilder builder = new StringBuilder();
+
 		builder.append("http://");
-		builder.append(props.getProperty(EsendexProperties.Key.DOMAIN));
+
+		if(this.domain != null)
+			builder.append(domain);
+		else
+			builder.append(props.getProperty(EsendexProperties.Key.DOMAIN));
+
 		builder.append("/");
         if(this.version != null)
 		    builder.append("v" + this.version);
         else
             builder.append(props.getProperty(EsendexProperties.Key.VERSION));
+
 		return builder.toString();
 	}
 

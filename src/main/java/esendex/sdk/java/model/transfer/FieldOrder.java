@@ -6,6 +6,10 @@ import esendex.sdk.java.model.transfer.message.MessageCollectionRequestDto;
 import esendex.sdk.java.model.transfer.message.MessageCollectionResponseDto;
 import esendex.sdk.java.model.transfer.message.MessageRequestDto;
 import esendex.sdk.java.model.transfer.message.MessageResponseDto;
+import esendex.sdk.java.model.transfer.surveys.RecipientDto;
+import esendex.sdk.java.model.transfer.surveys.RecipientsDto;
+import esendex.sdk.java.model.transfer.surveys.TemplateFieldDto;
+import esendex.sdk.java.model.transfer.surveys.TemplateFieldsDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +51,22 @@ public class FieldOrder {
 		fieldOrders.add(new FieldOrder(
 				ContactCollectionDto.class,  new String[] {
 					"id", "uri", "xmlns", "startindex", "count", "totalcount", "contacts"}));
+
+		fieldOrders.add(new FieldOrder(
+				RecipientsDto.class,  new String[] {
+				"uri", "xmlns", "recipients"}));
+
+		fieldOrders.add(new FieldOrder(
+				RecipientDto.class,  new String[] {
+				"uri", "xmlns", "phonenumber", "templatefields"}));
+
+		fieldOrders.add(new FieldOrder(
+				TemplateFieldDto.class,  new String[] {
+				"uri", "xmlns", "name", "value"}));
+
+		fieldOrders.add(new FieldOrder(
+				TemplateFieldsDto.class,  new String[] {
+				"uri", "xmlns", "templatefield"}));
 
 	}
 
