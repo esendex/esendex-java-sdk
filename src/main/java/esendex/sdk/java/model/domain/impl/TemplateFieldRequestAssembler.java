@@ -8,12 +8,12 @@ import java.util.List;
 
 public class TemplateFieldRequestAssembler {
 
-    public TemplateFieldsDto create(List<TemplateFields> tf)
+    public TemplateFieldsDto create(List<TemplateField> tf)
     {
         TemplateFieldsDto templateFieldsDto = new TemplateFieldsDto();
         List<TemplateFieldDto> templateFieldDtos = new ArrayList<>();
 
-        for (TemplateFields currentField : tf) {
+        for (TemplateField currentField : tf) {
 
             TemplateFieldDto dto = new TemplateFieldDto();
 

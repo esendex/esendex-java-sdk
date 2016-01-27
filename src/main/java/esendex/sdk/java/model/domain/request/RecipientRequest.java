@@ -1,13 +1,13 @@
 package esendex.sdk.java.model.domain.request;
 
-import esendex.sdk.java.model.domain.impl.TemplateFields;
+import esendex.sdk.java.model.domain.impl.TemplateField;
 
 import java.util.List;
 
 public class RecipientRequest {
 
     private String phonenumber;
-    private List<TemplateFields> templateFields;
+    private List<TemplateField> templateFields;
 
     /**
      * @param phonenumber the phone number
@@ -25,9 +25,9 @@ public class RecipientRequest {
         this.phonenumber = phonenumber;
     }
 
-    public List<TemplateFields> getTemplateFields() { return templateFields;  }
+    public List<TemplateField> getTemplateFields() { return templateFields;  }
 
-    public void setTemplateFields(List<TemplateFields> templateFields) {
+    public void setTemplateFields(List<TemplateField> templateFields) {
         this.templateFields = templateFields;
     }
 }

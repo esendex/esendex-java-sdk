@@ -1,11 +1,11 @@
 package esendex.sdk.java.model.domain.impl;
 
-public class TemplateFields {
+public class TemplateField {
 
     private String name;
     private String value;
 
-    public TemplateFields(String name, String value)
+    public TemplateField(String name, String value)
     {
         this.name = name;
         this.value = value;
