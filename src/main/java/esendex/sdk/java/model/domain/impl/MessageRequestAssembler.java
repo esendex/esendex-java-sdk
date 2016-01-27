@@ -16,5 +16,6 @@ public abstract class MessageRequestAssembler {
 		dto.setFrom(request.getFrom());
 		dto.setValidity(request.getValidity());
 		dto.setType(request.getMessageType());
+		dto.setCharacterSet(request.getCharacterSet());
 	}
 }

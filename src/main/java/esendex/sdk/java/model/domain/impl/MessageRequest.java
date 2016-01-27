@@ -1,17 +1,27 @@
 
 package esendex.sdk.java.model.domain.impl;
 
+import esendex.sdk.java.model.types.CharacterSet;
 import esendex.sdk.java.model.types.MessageType;
 
 public abstract class MessageRequest extends BaseMessageRequest {
 
-	private String to;	
+	private CharacterSet characterSet;
+	private String to;
 	private String body;	
 	
 	public MessageRequest(String to, String body, MessageType type) {
 		super(type);
 		this.to = to;
 		this.body = body;
+		this.characterSet = CharacterSet.GSM;
+	}
+
+	public MessageRequest(String to, String body, MessageType type, CharacterSet characterSet) {
+		super(type);
+		this.to = to;
+		this.body = body;
+		this.characterSet = characterSet;
 	}
 
 	public String getTo() {
@@ -22,6 +32,8 @@ public abstract class MessageRequest extends BaseMessageRequest {
 		return body;
 	}
 
+	public CharacterSet getCharacterSet() {	return characterSet;}
+
 	public void setTo(String to) {
 		this.to = to;
 	}
@@ -30,6 +42,7 @@ public abstract class MessageRequest extends BaseMessageRequest {
 		this.body = body;
 	}
 
+	public void setCharacterSet(CharacterSet characterSet) { this.characterSet = characterSet; }
 	/**
 	 * {@inheritDoc}
 	 */
@@ -39,5 +52,7 @@ public abstract class MessageRequest extends BaseMessageRequest {
 			"\nto: " + to +
 			"\nbody: " + body;
 	}
+
+
 
 }
