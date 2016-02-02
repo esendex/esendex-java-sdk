@@ -1,7 +1,7 @@
 
 package esendex.sdk.java.service.auth;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * Simple holder for a user/password pair.  Used for Basic Authentication and
  * initial aquisition of a session for Session Authentication. 

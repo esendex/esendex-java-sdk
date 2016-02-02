@@ -3,7 +3,7 @@ package esendex.sdk.java.parser;
 
 import esendex.sdk.java.EsendexException;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * Exception to indicate that data could not be treated as xml, 
  * probably due to not being well formed.
