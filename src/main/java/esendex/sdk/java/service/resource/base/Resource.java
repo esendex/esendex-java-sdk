@@ -26,6 +26,7 @@ import esendex.sdk.java.service.auth.Authenticator;
 public abstract class Resource {
 
 	private static final Log log = LogFactory.getLog(Resource.class);
+	private boolean secure;
 
 	private String domain;
 	private String version;
@@ -36,18 +37,22 @@ public abstract class Resource {
 	private String baseUrl;
 	private Authenticator authenticator;
 
-	public Resource(Authenticator auth, String id, HttpQuery query, String version, String domain) {
+
+
+	public Resource(Authenticator auth, String id, HttpQuery query, String version, String domain, boolean secure) {
 
 		this.id = id;
 		this.query = query;
 		this.authenticator = auth;
 		this.version = version;
 		this.domain = domain;
+		this.secure = secure;
 		baseUrl = createParentEndpoint(domain);
 	}
 
 	public Resource(Authenticator auth, String account, String id, HttpQuery query, String version) {
 
+		this.secure = false;
 		this.account = account;
 		this.id = id;
 		this.query = query;
@@ -78,7 +83,10 @@ public abstract class Resource {
 		EsendexProperties props = EsendexProperties.instance();
 		StringBuilder builder = new StringBuilder();
 
-		builder.append("http://");
+		if(secure)
+			builder.append("https://");
+		else
+			builder.append("http://");
 
 		if(this.domain != null)
 			builder.append(domain);

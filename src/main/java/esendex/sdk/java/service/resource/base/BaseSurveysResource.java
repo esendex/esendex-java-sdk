@@ -29,7 +29,7 @@ public abstract class BaseSurveysResource<Q extends Dto> extends Resource {
 	}
 
 	public BaseSurveysResource(Authenticator auth, String id, HttpQuery query, String version) {
-		super(auth, id, query, version, props.getProperty(EsendexProperties.Key.SURVEYS_DOMAIN));
+		super(auth, id, query, version, props.getProperty(EsendexProperties.Key.SURVEYS_DOMAIN), true);
 
 	}
 }
