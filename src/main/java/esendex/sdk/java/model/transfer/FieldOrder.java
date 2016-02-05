@@ -2,10 +2,7 @@ package esendex.sdk.java.model.transfer;
 
 import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
 import esendex.sdk.java.model.transfer.contact.ContactDto;
-import esendex.sdk.java.model.transfer.message.MessageCollectionRequestDto;
-import esendex.sdk.java.model.transfer.message.MessageCollectionResponseDto;
-import esendex.sdk.java.model.transfer.message.MessageRequestDto;
-import esendex.sdk.java.model.transfer.message.MessageResponseDto;
+import esendex.sdk.java.model.transfer.message.*;
 import esendex.sdk.java.model.transfer.surveys.RecipientDto;
 import esendex.sdk.java.model.transfer.surveys.RecipientsDto;
 import esendex.sdk.java.model.transfer.surveys.TemplateFieldDto;
@@ -37,11 +34,15 @@ public class FieldOrder {
 					"id", "uri", "xmlns", "reference", "status", "sentat", "deliveredat",
 					"receivedat", "type", "to", "from", "laststatusat",
 					"submittedat", "summary", "body", "direction", "parts",
-					"username", "readat", "readby"}));
+					"username", "readat", "readby", "failurereason"}));
 
 		fieldOrders.add(new FieldOrder(
 				MessageCollectionResponseDto.class,  new String[] {
 					"id", "uri", "xmlns", "batchid", "startindex", "count", "totalcount", "messageheaders"}));
+
+		fieldOrders.add(new FieldOrder(
+				FailureReasonDto.class, new String[]{
+				"code", "description", "permanentfailure"}));
 
 		fieldOrders.add(new FieldOrder(
 				ContactDto.class,  new String[] {

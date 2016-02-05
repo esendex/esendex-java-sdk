@@ -14,24 +14,25 @@ import esendex.sdk.java.model.types.Status;
  */
 public class MessageResponseDto extends Dto {
 	
-	private String reference;			// all
-	private Status status;				// all
-	private Date sentat;				// outbound
-	private Date deliveredat;			// outbound
-	private Date receivedat;			// inbound
-	private MessageType type;			// all
-	private MessageContactDto to;		// all
-	private MessageContactDto from;		// all
-	private Date laststatusat;			// outbound
-	private Date submittedat;  			// outbound 
-	private String summary;				// all
-	private BodyDto body;				// all
-	private MessageDirection direction;	// all
-	private Integer parts;				// all
-	private String username;			// outbound
-	private Date readat;				// inbound
-	private String readby;				// inbound
-	
+	private String reference;			    // all
+	private Status status;				    // all
+	private Date sentat;				    // outbound
+	private Date deliveredat;			    // outbound
+	private Date receivedat;			    // inbound
+	private MessageType type;			    // all
+	private MessageContactDto to;		    // all
+	private MessageContactDto from;		    // all
+	private Date laststatusat;			    // outbound
+	private Date submittedat;  			    // outbound
+	private String summary;				    // all
+	private BodyDto body;				    // all
+	private MessageDirection direction;	    // all
+	private Integer parts;				    // all
+	private String username;			    // outbound
+	private Date readat;				    // inbound
+	private String readby;				    // inbound
+	private FailureReasonDto failurereason; // outbound
+
 	public MessageResponseDto() {
 		super();
 	}
@@ -172,6 +173,10 @@ public class MessageResponseDto extends Dto {
 		return readby;
 	}
 
+	public FailureReasonDto getFailureReason() {
+        return failurereason;
+    }
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -197,6 +202,4 @@ public class MessageResponseDto extends Dto {
 			"\nreadat: " + readat +
 			"\nreadby: " + readby;
 	}
-
-	
 }
