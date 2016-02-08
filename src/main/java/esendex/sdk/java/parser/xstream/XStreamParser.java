@@ -7,6 +7,7 @@ import esendex.sdk.java.model.transfer.LinkDto;
 import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
 import esendex.sdk.java.model.transfer.contact.ContactDto;
 import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
+import esendex.sdk.java.model.transfer.message.*;
 import esendex.sdk.java.model.transfer.surveys.RecipientDto;
 import esendex.sdk.java.model.transfer.surveys.RecipientsDto;
 import esendex.sdk.java.model.transfer.surveys.TemplateFieldDto;
@@ -23,11 +24,6 @@ import esendex.sdk.java.EsendexException;
 import esendex.sdk.java.EsendexProperties;
 import esendex.sdk.java.model.transfer.Dto;
 import esendex.sdk.java.model.transfer.PageableDto;
-import esendex.sdk.java.model.transfer.message.BodyDto;
-import esendex.sdk.java.model.transfer.message.MessageCollectionRequestDto;
-import esendex.sdk.java.model.transfer.message.MessageCollectionResponseDto;
-import esendex.sdk.java.model.transfer.message.MessageRequestDto;
-import esendex.sdk.java.model.transfer.message.MessageResponseDto;
 import esendex.sdk.java.model.transfer.session.SessionDto;
 import esendex.sdk.java.parser.EsendexCasedEnumConverter;
 import esendex.sdk.java.parser.InvalidXmlException;
@@ -100,6 +96,7 @@ public class XStreamParser implements XmlParser {
 
 		// MessageHeader (response)
 		xStream.alias("body", BodyDto.class);
+		xStream.alias("failurereason", FailureReasonDto.class);
 		xStream.alias("messageheader", MessageResponseDto.class);
 
 		// MessageHeaders (response)

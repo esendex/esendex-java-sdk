@@ -4,6 +4,7 @@ package esendex.sdk.java.model.domain.impl;
 import java.util.Date;
 
 import esendex.sdk.java.model.domain.response.SentMessageResponse;
+import esendex.sdk.java.model.transfer.message.FailureReasonDto;
 
 /**
  * A SentMessageResponse.
@@ -15,6 +16,7 @@ public class SentMessageResponseImpl extends MessageResponseImpl implements Sent
 	private Date lastStatusAt;
 	private Date submittedAt;
 	private String userName;
+	private FailureReason failureReason;
 
 	public SentMessageResponseImpl() {
 	}
@@ -38,7 +40,11 @@ public class SentMessageResponseImpl extends MessageResponseImpl implements Sent
 	public String getUserName() {
 		return userName;
 	}
-	
+
+	public FailureReason getFailureReason() {
+		return failureReason;
+	}
+
 	protected void setSentAt(Date sentAt) {
 		this.sentAt = sentAt;
 	}
@@ -59,6 +65,10 @@ public class SentMessageResponseImpl extends MessageResponseImpl implements Sent
 		this.userName = userName;
 	}
 
+	public void setFailureReason(FailureReason failureReason) {
+		this.failureReason = failureReason;
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -72,5 +82,4 @@ public class SentMessageResponseImpl extends MessageResponseImpl implements Sent
 			"\nsubmittedAt: " + getSubmittedAt() +   
 			"\nuserName: " + getUserName();
 	}
-	
 }
