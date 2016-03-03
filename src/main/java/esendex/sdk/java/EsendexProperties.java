@@ -15,12 +15,13 @@ public class EsendexProperties {
 	 * The Enum Key.
 	 */
 	public enum Key {
-		VERSION 	("esendex.version"),
-		NAMESPACE 	("esendex.namespace"),
-		DOMAIN 		("esendex.domain"),
-		SURVEYS_DOMAIN("esendex.surveys_domain"),
-		PORT 		("esendex.port"),
-        BUILD_VERSION("esendex.build_version");
+		VERSION 	   ("esendex.version"),
+		NAMESPACE 	   ("esendex.namespace"),
+		DOMAIN 		   ("esendex.domain"),
+		SECURE         ("esendex.secure"),
+		SURVEYS_DOMAIN ("esendex.surveys_domain"),
+		PORT 	  	   ("esendex.port"),
+        BUILD_VERSION  ("esendex.build_version");
 		
 		String value;
 		Key(String v) {

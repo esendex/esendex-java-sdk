@@ -29,6 +29,7 @@ public abstract class BaseTest {
 
         String domain = testProperties.getDomain();
 
+        EsendexProperties.instance().setProperty("esendex.secure", "false");
         if(domain != null)
             EsendexProperties.instance().setProperty("esendex.domain", domain);
     }

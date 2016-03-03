@@ -52,7 +52,7 @@ public abstract class Resource {
 
 	public Resource(Authenticator auth, String account, String id, HttpQuery query, String version) {
 
-		this.secure = false;
+		this.secure = EsendexProperties.instance().getProperty(EsendexProperties.Key.SECURE).equals("true");
 		this.account = account;
 		this.id = id;
 		this.query = query;
