@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <properties>
         <buildnumber>0</buildnumber>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <groupId>esendex-java-sdk</groupId>
     <artifactId>esendex-java-sdk</artifactId>
