@@ -1,12 +1,7 @@
 package com.esendex.java.sdk.integration.inboxservice;
 
-import com.esendex.java.sdk.BaseTest;
-import esendex.sdk.java.EsendexException;
+import com.esendex.java.sdk.integration.BaseTest;
 import esendex.sdk.java.model.domain.response.InboxMessageCollectionResponse;
-import esendex.sdk.java.model.domain.response.InboxMessageResponse;
-import esendex.sdk.java.service.InboxService;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
