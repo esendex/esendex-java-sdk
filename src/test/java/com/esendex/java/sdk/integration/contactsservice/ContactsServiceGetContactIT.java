@@ -1,8 +1,7 @@
 package com.esendex.java.sdk.integration.contactsservice;
 
-import com.esendex.java.sdk.BaseTest;
+import com.esendex.java.sdk.integration.BaseTest;
 import esendex.sdk.java.EsendexException;
-import esendex.sdk.java.model.domain.request.ContactRequest;
 import esendex.sdk.java.model.domain.response.ContactResponse;
 import esendex.sdk.java.service.ContactService;
 import org.junit.BeforeClass;

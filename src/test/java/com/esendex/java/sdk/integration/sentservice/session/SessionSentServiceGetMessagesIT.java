@@ -1,6 +1,6 @@
 package com.esendex.java.sdk.integration.sentservice.session;
 
-import com.esendex.java.sdk.BaseTest;
+import com.esendex.java.sdk.integration.BaseTest;
 import esendex.sdk.java.EsendexException;
 import esendex.sdk.java.model.domain.response.SentMessageCollectionResponse;
 import esendex.sdk.java.model.domain.response.SentMessageResponse;
