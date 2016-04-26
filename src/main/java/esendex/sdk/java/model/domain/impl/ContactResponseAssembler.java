@@ -26,7 +26,7 @@ public class ContactResponseAssembler {
 
 	public List<ContactResponse> createCollectionResponse(ContactCollectionDto col) {
 
-		List<ContactResponse> list = new ArrayList<ContactResponse>();
+		List<ContactResponse> list = new ArrayList<>();
 		if (col != null) {
 			for (ContactDto dto : col.getContacts()) {
 				list.add(createResponse(dto));

@@ -8,6 +8,7 @@ import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
 import esendex.sdk.java.model.transfer.contact.ContactDto;
 import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
 import esendex.sdk.java.model.transfer.message.*;
+import esendex.sdk.java.model.transfer.optout.OptOutResponseDto;
 import esendex.sdk.java.model.transfer.surveys.RecipientDto;
 import esendex.sdk.java.model.transfer.surveys.RecipientsDto;
 import esendex.sdk.java.model.transfer.surveys.TemplateFieldDto;
@@ -52,6 +53,7 @@ public class XStreamParser implements XmlParser {
 	public XStreamParser() {
 
 		xStream = createXStream();
+		xStream.ignoreUnknownElements();
 
 
 		// General aliases
@@ -72,7 +74,6 @@ public class XStreamParser implements XmlParser {
 		// Contacts
 		xStream.alias("contacts", ContactCollectionDto.class);
 		xStream.addImplicitCollection(ContactCollectionDto.class, "contacts");
-        xStream.omitField(ContactCollectionDto.class, "link");
 
 		xStream.processAnnotations(ContactDto.class);
 		xStream.processAnnotations(ContactResponseDto.class);
@@ -83,6 +84,9 @@ public class XStreamParser implements XmlParser {
 		xStream.processAnnotations(RecipientsDto.class);
 		xStream.processAnnotations(TemplateFieldDto.class);
 		xStream.processAnnotations(TemplateFieldsDto.class);
+
+		//OptOuts
+		xStream.processAnnotations(OptOutResponseDto.class);
 
 		// Message (request)
 		xStream.alias("message", MessageRequestDto.class);

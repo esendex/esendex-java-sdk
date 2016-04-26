@@ -14,15 +14,28 @@ import esendex.sdk.java.service.impl.SentServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import static junit.framework.Assert.assertEquals;
 
 public class GetMessageTest extends BaseTest {
     private SentMessageResponse result;
+    private Date expectedLastStatusAt;
+    private Date expectedSubmittedAt;
 
     @Before
     public void before() throws EsendexException {
+        Calendar cal = Calendar.getInstance();
+
+        cal.set(2010, 0, 1, 12, 0, 5);
+        cal.set(Calendar.MILLISECOND, 0);
+        expectedLastStatusAt = cal.getTime();
+
+        cal.set(2010, 0, 1, 12, 0, 2);
+        cal.set(Calendar.MILLISECOND, 0);
+        expectedSubmittedAt = cal.getTime();
+
         TestServer server = new TestServer(44041);
         server.start();
         try {
@@ -60,8 +73,8 @@ public class GetMessageTest extends BaseTest {
     @Test
     public void thenTheMessagePropertiesAreSet() {
         assertEquals(Status.DELIVERED, result.getStatus());
-        assertEquals(new Date(110, 0, 1, 12, 0, 5), result.getLastStatusAt());
-        assertEquals(new Date(110, 0, 1, 12, 0, 2), result.getSubmittedAt());
+        assertEquals(expectedLastStatusAt, result.getLastStatusAt());
+        assertEquals(expectedSubmittedAt, result.getSubmittedAt());
         assertEquals(MessageType.SMS, result.getType());
         assertEquals("447700900123", result.getTo().getPhoneNumber());
         assertEquals("447700900654", result.getFrom().getPhoneNumber());
