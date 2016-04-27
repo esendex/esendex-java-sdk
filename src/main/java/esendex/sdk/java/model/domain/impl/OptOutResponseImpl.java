@@ -24,15 +24,15 @@ public class OptOutResponseImpl implements OptOutResponse {
 
     public FromAddress getFrom() { return from; }
 
-    protected void setId(String id) {
+    void setId(String id) {
         this.id = id;
     }
 
-    protected void setReceivedAt(Date receivedAt) {
+    void setReceivedAt(Date receivedAt) {
         this.receivedAt = receivedAt;
     }
 
-    protected void setAccountReference(String accountReference) { this.accountReference = accountReference; }
+    void setAccountReference(String accountReference) { this.accountReference = accountReference; }
 
-    protected void setFrom(FromAddress from) { this.from = from; }
+    void setFrom(FromAddress from) { this.from = from; }
 }

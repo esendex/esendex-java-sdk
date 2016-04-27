@@ -4,6 +4,8 @@ import java.util.Date;
 
 public interface OptOutResponse {
 
+    String getId();
+
     Date getReceivedAt();
 
     String getAccountReference();

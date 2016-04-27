@@ -8,6 +8,7 @@ import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
 import esendex.sdk.java.model.transfer.contact.ContactDto;
 import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
 import esendex.sdk.java.model.transfer.message.*;
+import esendex.sdk.java.model.transfer.optout.OptOutCollectionResponseDto;
 import esendex.sdk.java.model.transfer.optout.OptOutResponseDto;
 import esendex.sdk.java.model.transfer.surveys.RecipientDto;
 import esendex.sdk.java.model.transfer.surveys.RecipientsDto;
@@ -40,113 +41,116 @@ import esendex.sdk.java.parser.XmlParser;
  */
 public class XStreamParser implements XmlParser {
 
-	@SuppressWarnings("unused")
-	private static Log log = LogFactory.getLog(XStreamParser.class);
+    @SuppressWarnings("unused")
+    private static Log log = LogFactory.getLog(XStreamParser.class);
 
-	private XStream xStream;
+    private XStream xStream;
 
-	/**
-	 * Instantiate the parser by configuration of the underlying XStream
-	 * instance. Developers are directed to XStream documentation for details on
-	 * how to modify this configuration.
-	 */
-	public XStreamParser() {
+    /**
+     * Instantiate the parser by configuration of the underlying XStream
+     * instance. Developers are directed to XStream documentation for details on
+     * how to modify this configuration.
+     */
+    public XStreamParser() {
 
-		xStream = createXStream();
-		xStream.ignoreUnknownElements();
+        xStream = createXStream();
+        xStream.ignoreUnknownElements();
 
 
-		// General aliases
-		xStream.useAttributeFor(Dto.class, "id");
-		xStream.useAttributeFor(Dto.class, "uri");
-		xStream.useAttributeFor(Dto.class, "xmlns");
-		xStream.useAttributeFor(PageableDto.class, "totalcount");
-		xStream.useAttributeFor(PageableDto.class, "count");
-		xStream.useAttributeFor(PageableDto.class, "startindex");
+        // General aliases
+        xStream.useAttributeFor(Dto.class, "id");
+        xStream.useAttributeFor(Dto.class, "uri");
+        xStream.useAttributeFor(Dto.class, "xmlns");
+        xStream.useAttributeFor(PageableDto.class, "totalcount");
+        xStream.useAttributeFor(PageableDto.class, "count");
+        xStream.useAttributeFor(PageableDto.class, "startindex");
 
-		// General converters
-		xStream.registerConverter(new EmptyToNullDateConverter());
-		xStream.registerConverter(new EsendexCasedEnumConverter());
+        // General converters
+        xStream.registerConverter(new EmptyToNullDateConverter());
+        xStream.registerConverter(new EsendexCasedEnumConverter());
 
-		// Session
-		xStream.alias("session", SessionDto.class);
+        // Session
+        xStream.alias("session", SessionDto.class);
 
-		// Contacts
-		xStream.alias("contacts", ContactCollectionDto.class);
-		xStream.addImplicitCollection(ContactCollectionDto.class, "contacts");
+        // Contacts
+        xStream.alias("contacts", ContactCollectionDto.class);
+        xStream.addImplicitCollection(ContactCollectionDto.class, "contacts");
 
-		xStream.processAnnotations(ContactDto.class);
-		xStream.processAnnotations(ContactResponseDto.class);
-		xStream.processAnnotations(LinkDto.class);
+        xStream.processAnnotations(ContactDto.class);
+        xStream.processAnnotations(ContactResponseDto.class);
+        xStream.processAnnotations(LinkDto.class);
 
-		//Surveys
-		xStream.processAnnotations(RecipientDto.class);
-		xStream.processAnnotations(RecipientsDto.class);
-		xStream.processAnnotations(TemplateFieldDto.class);
-		xStream.processAnnotations(TemplateFieldsDto.class);
+        //Surveys
+        xStream.processAnnotations(RecipientDto.class);
+        xStream.processAnnotations(RecipientsDto.class);
+        xStream.processAnnotations(TemplateFieldDto.class);
+        xStream.processAnnotations(TemplateFieldsDto.class);
 
-		//OptOuts
-		xStream.processAnnotations(OptOutResponseDto.class);
+        //OptOuts
+        xStream.alias("optouts", OptOutCollectionResponseDto.class);
+        xStream.addImplicitCollection(OptOutCollectionResponseDto.class, "optouts");
 
-		// Message (request)
-		xStream.alias("message", MessageRequestDto.class);
-		xStream.addImmutableType(MessageRequestDto.class);
+        xStream.processAnnotations(OptOutResponseDto.class);
 
-		// Messages (request)
-		xStream.alias("messages", MessageCollectionRequestDto.class);
-		xStream.addImplicitCollection(
-				MessageCollectionRequestDto.class, "messages",
-				MessageRequestDto.class);
+        // Message (request)
+        xStream.alias("message", MessageRequestDto.class);
+        xStream.addImmutableType(MessageRequestDto.class);
 
-		// MessageHeader (response)
-		xStream.alias("body", BodyDto.class);
-		xStream.alias("failurereason", FailureReasonDto.class);
-		xStream.alias("messageheader", MessageResponseDto.class);
+        // Messages (request)
+        xStream.alias("messages", MessageCollectionRequestDto.class);
+        xStream.addImplicitCollection(
+                MessageCollectionRequestDto.class, "messages",
+                MessageRequestDto.class);
 
-		// MessageHeaders (response)
-		xStream.useAttributeFor(MessageCollectionResponseDto.class, "batchid");
-		xStream.alias("messageheaders", MessageCollectionResponseDto.class);
-		xStream.addImplicitCollection(
-				MessageCollectionResponseDto.class, "messageheaders",
-				MessageResponseDto.class);
-	}
+        // MessageHeader (response)
+        xStream.alias("body", BodyDto.class);
+        xStream.alias("failurereason", FailureReasonDto.class);
+        xStream.alias("messageheader", MessageResponseDto.class);
 
-	// configures the field order for the DTOs
-	private static XStream createXStream() {
+        // MessageHeaders (response)
+        xStream.useAttributeFor(MessageCollectionResponseDto.class, "batchid");
+        xStream.alias("messageheaders", MessageCollectionResponseDto.class);
+        xStream.addImplicitCollection(
+                MessageCollectionResponseDto.class, "messageheaders",
+                MessageResponseDto.class);
+    }
+
+    // configures the field order for the DTOs
+    private static XStream createXStream() {
         return new XStream();
-	}
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public Object fromXml(String xml) throws EsendexException {
-		try {
-			return xStream.fromXML(xml);
-		} catch (ClassCastException ex) {
-			throw new UnmappableException("Could not map to a Dto", ex);
-		} catch (StreamException ex) {
-			throw new InvalidXmlException(ex);
-		} catch (CannotResolveClassException ex) {
-			throw new UnmappableException("Could not map to an Object", ex);
-		}
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Object fromXml(String xml) throws EsendexException {
+        try {
+            return xStream.fromXML(xml);
+        } catch (ClassCastException ex) {
+            throw new UnmappableException("Could not map to a Dto", ex);
+        } catch (StreamException ex) {
+            throw new InvalidXmlException(ex);
+        } catch (CannotResolveClassException ex) {
+            throw new UnmappableException("Could not map to an Object", ex);
+        }
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public String toXml(Dto dto) {
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toXml(Dto dto) {
 
-		dto.setXmlns(EsendexProperties.instance().getProperty(
-				EsendexProperties.Key.NAMESPACE));
+        dto.setXmlns(EsendexProperties.instance().getProperty(
+                EsendexProperties.Key.NAMESPACE));
 
-		String declaration = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+        String declaration = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 
-		StringWriter writer = new StringWriter();
-		xStream.marshal(dto, new CompactWriter(writer));
-		String xml = declaration + writer.toString();
-		return xml;
-	}
+        StringWriter writer = new StringWriter();
+        xStream.marshal(dto, new CompactWriter(writer));
+        String xml = declaration + writer.toString();
+        return xml;
+    }
 
 }

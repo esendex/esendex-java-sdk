@@ -15,21 +15,21 @@ public class InboxServiceDeleteIT extends BaseTest {
 
         InboxService inboxService = getFactory().getInboxService();
 
-        InboxMessageCollectionResponse messages = inboxService.getMessages();
+        InboxMessageCollectionResponse messages = inboxService.getOptOuts();
 
-        if ( messages.getTotalCount() != 0 )
+        if ( messages.getTotalcount() != 0 )
         {
-            messageIdToDelete = messages.getMessages().get(0).getId();
+            messageIdToDelete = messages.getOptOuts().get(0).getId();
             assertTrue(inboxService.deleteMessage(messageIdToDelete));
         }
 
-        messagesAfterDelete = inboxService.getMessages();
+        messagesAfterDelete = inboxService.getOptOuts();
     }
 
     @Test
     public void thenTheMessageIsNotInTheMessagesRetrievedAfterTheDelete() {
 
-        for (InboxMessageResponse inboxMessageResponse : messagesAfterDelete.getMessages()) {
+        for (InboxMessageResponse inboxMessageResponse : messagesAfterDelete.getOptOuts()) {
             assertTrue(messageIdToDelete.equals(inboxMessageResponse.getId()));
         }
     }*/
