@@ -18,7 +18,7 @@ import org.junit.Test;
 import java.util.Calendar;
 import java.util.Date;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class GetMessageTest extends BaseTest {
     private static SentMessageResponse result;
@@ -80,6 +80,7 @@ public class GetMessageTest extends BaseTest {
 
     @Test
     public void thenTheMessagePropertiesAreSet() {
+        assertEquals("CDEB3533-1F76-46D7-A2A9-0DAF8290F7FC", result.getId());
         assertEquals(Status.DELIVERED, result.getStatus());
         assertEquals(expectedLastStatusAt, result.getLastStatusAt());
         assertEquals(expectedSubmittedAt, result.getSubmittedAt());

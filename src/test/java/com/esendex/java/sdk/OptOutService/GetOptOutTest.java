@@ -16,7 +16,7 @@ import org.junit.Test;
 import java.util.Calendar;
 import java.util.Date;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class GetOptOutTest extends BaseTest {
     private static OptOutResponse result;

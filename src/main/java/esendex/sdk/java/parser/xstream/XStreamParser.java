@@ -94,7 +94,7 @@ public class XStreamParser implements XmlParser {
 
         // Message (request)
         xStream.alias("message", MessageRequestDto.class);
-        xStream.addImmutableType(MessageRequestDto.class);
+        xStream.addImmutableType(MessageRequestDto.class, true);
 
         // Messages (request)
         xStream.alias("messages", MessageCollectionRequestDto.class);
