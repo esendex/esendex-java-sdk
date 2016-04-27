@@ -44,4 +44,19 @@ public class OptOutServiceImpl extends AbstractService implements OptOutService 
 
         return new OptOutResponseAssembler().createCollectionResponse(resource.getResponseObject());
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public OptOutCollectionResponse getOptOuts(String account, int pageNumber, int pageSize) throws EsendexException {
+        HttpQuery query = new HttpQuery();
+        query.addParameter(HttpQuery.START_INDEX, pageNumber);
+        query.addParameter(HttpQuery.COUNT, pageSize);
+        query.addParameter(HttpQuery.ACCOUNT_REFERENCE, account);
+
+        RetrieveOptOutsResource resource = new RetrieveOptOutsResource(authenticator, query);
+        resource.execute();
+
+        return new OptOutResponseAssembler().createCollectionResponse(resource.getResponseObject());
+    }
 }

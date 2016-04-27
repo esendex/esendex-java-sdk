@@ -26,4 +26,16 @@ public interface OptOutService {
      */
     OptOutCollectionResponse getOptOuts(int pageNumber, int pageSize)
             throws EsendexException;
+
+    /**
+     * Gets opt outs by account reference.
+     *
+     * @param account    the account
+     * @param pageNumber the page number
+     * @param pageSize   the page size
+     * @return the opt outs
+     * @throws EsendexException the Esendex exception
+     */
+    OptOutCollectionResponse getOptOuts(String account, int pageNumber, int pageSize)
+            throws EsendexException;
 }
