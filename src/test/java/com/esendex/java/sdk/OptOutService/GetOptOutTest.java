@@ -38,7 +38,7 @@ public class GetOptOutTest extends BaseTest {
         cal.set(Calendar.MILLISECOND, 0);
         expectedReceivedAt = cal.getTime();
 
-        server = new TestServer(44041);
+        server = new TestServer();
         server.start();
 
         server.expect(StubMethod.get("/v1.0/optouts/THEID")).thenReturn(200, "application/xml", responseBody);

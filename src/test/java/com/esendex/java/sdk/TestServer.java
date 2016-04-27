@@ -6,10 +6,14 @@ import com.pyruby.stubserver.StubServer;
 import esendex.sdk.java.EsendexProperties;
 
 public class TestServer {
+    private static Integer lastPort = 44000;
     private String originalDomain;
     private StubServer server;
+    private Integer port;
 
-    public TestServer(int port) {
+    public TestServer() {
+        port = lastPort++;
+
         EsendexProperties properties = EsendexProperties.instance();
         originalDomain = properties.getProperty(EsendexProperties.Key.DOMAIN);
         properties.setProperty("esendex.domain", "localhost:" + Integer.toString(port));

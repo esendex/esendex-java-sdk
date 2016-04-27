@@ -16,7 +16,6 @@ import org.junit.Test;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -54,7 +53,7 @@ public class GetOptOutsTest extends BaseTest {
         cal.set(Calendar.MILLISECOND, 0);
         expectedSecondReceivedAt = cal.getTime();
 
-        server = new TestServer(44041);
+        server = new TestServer();
         server.start();
 
         server.expect(StubMethod.get("/v1.0/optouts")).thenReturn(200, "application/xml", responseBody);
