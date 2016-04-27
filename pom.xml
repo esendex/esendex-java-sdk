@@ -108,6 +108,7 @@
             <groupId>com.pyruby</groupId>
             <artifactId>java-stub-server</artifactId>
             <version>0.12</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
