@@ -24,6 +24,7 @@ public class GetOptOutsTest extends BaseTest {
     private static Date expectedFirstReceivedAt;
     private static Date expectedSecondReceivedAt;
     private static TestServer server;
+    private static StubMethod stubMethod;
 
     @BeforeClass
     public static void beforeClass() throws EsendexException {
@@ -56,7 +57,8 @@ public class GetOptOutsTest extends BaseTest {
         server = new TestServer();
         server.start();
 
-        server.expect(StubMethod.get("/v1.0/optouts")).thenReturn(200, "application/xml", responseBody);
+        stubMethod = StubMethod.get("/v1.0/optouts");
+        server.expect(stubMethod).thenReturn(200, "application/xml", responseBody);
 
         UserPassword userPassword = new UserPassword("YourUsername", "YourPassword");
         OptOutService optOutService = new OptOutServiceImpl(new BasicAuthenticator(userPassword));
@@ -72,6 +74,12 @@ public class GetOptOutsTest extends BaseTest {
     @Test
     public void thenTheOptOutsAreRetrieved() {
         server.verify();
+    }
+
+    @Test
+    public void thenThePageQueryParametersWereAddedToTheRequest() {
+        assertEquals("56", stubMethod.query.get("startIndex")[0]);
+        assertEquals("71", stubMethod.query.get("count")[0]);
     }
 
     @Test

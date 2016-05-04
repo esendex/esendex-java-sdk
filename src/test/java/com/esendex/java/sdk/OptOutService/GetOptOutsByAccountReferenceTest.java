@@ -77,6 +77,12 @@ public class GetOptOutsByAccountReferenceTest extends BaseTest {
     }
 
     @Test
+    public void thenThePageQueryParametersWereAddedToTheRequest() {
+        assertEquals("56", stubMethod.query.get("startIndex")[0]);
+        assertEquals("71", stubMethod.query.get("count")[0]);
+    }
+
+    @Test
     public void thenTheAccountReferenceQueryParameterWasAddedToTheRequest() {
         assertEquals("EX0012345", stubMethod.query.get("accountreference")[0]);
     }

@@ -3,6 +3,7 @@ package esendex.sdk.java.model.transfer.optout;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import esendex.sdk.java.model.transfer.Dto;
 
+@XStreamAlias("from")
 public class FromAddressDto extends Dto {
 
     @XStreamAlias("phonenumber")

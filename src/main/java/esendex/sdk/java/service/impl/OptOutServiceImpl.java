@@ -2,11 +2,16 @@ package esendex.sdk.java.service.impl;
 
 import esendex.sdk.java.EsendexException;
 import esendex.sdk.java.http.HttpQuery;
+import esendex.sdk.java.model.domain.impl.OptOutRequestAssembler;
 import esendex.sdk.java.model.domain.impl.OptOutResponseAssembler;
+import esendex.sdk.java.model.domain.request.OptOutRequest;
 import esendex.sdk.java.model.domain.response.OptOutCollectionResponse;
 import esendex.sdk.java.model.domain.response.OptOutResponse;
+import esendex.sdk.java.model.transfer.optout.OptOutCreateResponseDto;
+import esendex.sdk.java.model.transfer.optout.OptOutRequestDto;
 import esendex.sdk.java.service.OptOutService;
 import esendex.sdk.java.service.auth.Authenticator;
+import esendex.sdk.java.service.resource.optout.CreateOptOutResource;
 import esendex.sdk.java.service.resource.optout.RetrieveOptOutResource;
 import esendex.sdk.java.service.resource.optout.RetrieveOptOutsResource;
 
@@ -58,5 +63,19 @@ public class OptOutServiceImpl extends AbstractService implements OptOutService 
         resource.execute();
 
         return new OptOutResponseAssembler().createCollectionResponse(resource.getResponseObject());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public OptOutResponse createOptOut(OptOutRequest optOutRequest) throws EsendexException {
+        CreateOptOutResource resource = new CreateOptOutResource(authenticator);
+        OptOutRequestDto optOutDto = new OptOutRequestAssembler().createOptOutDto(optOutRequest);
+
+        resource.setRequestObject(optOutDto);
+        resource.execute();
+
+        OptOutCreateResponseDto resp = resource.getResponseObject();
+        return new OptOutResponseAssembler().createResponse(resp.getOptOut());
     }
 }

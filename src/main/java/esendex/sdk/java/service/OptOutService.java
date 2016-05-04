@@ -1,6 +1,7 @@
 package esendex.sdk.java.service;
 
 import esendex.sdk.java.EsendexException;
+import esendex.sdk.java.model.domain.request.OptOutRequest;
 import esendex.sdk.java.model.domain.response.OptOutCollectionResponse;
 import esendex.sdk.java.model.domain.response.OptOutResponse;
 
@@ -37,5 +38,15 @@ public interface OptOutService {
      * @throws EsendexException the Esendex exception
      */
     OptOutCollectionResponse getOptOuts(String account, int pageNumber, int pageSize)
+            throws EsendexException;
+
+    /**
+     * Creates an opt out.
+     *
+     * @param optOutRequest the opt out to be created
+     * @return the created opt out
+     * @throws EsendexException the Esendex exception
+     */
+    OptOutResponse createOptOut(OptOutRequest optOutRequest)
             throws EsendexException;
 }
