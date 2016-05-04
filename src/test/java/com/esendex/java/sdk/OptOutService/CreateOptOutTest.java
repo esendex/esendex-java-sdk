@@ -20,6 +20,7 @@ import org.junit.Test;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 import static org.junit.Assert.assertEquals;
 
@@ -36,7 +37,7 @@ public class CreateOptOutTest extends BaseTest {
                 "<response xmlns=\"http://api.esendex.com/ns/\">\n" +
                 "  <optout id=\"5d3c5c2d-ae35-4001-bf64-8893c091cb7f\">\n" +
                 "    <accountreference>EX0012345</accountreference>\n" +
-                "    <receivedat>2016-05-04T10:27:12Z</receivedat>\n" +
+                "    <receivedat>2016-05-04T10:27:12.2342Z</receivedat>\n" +
                 "    <from>\n" +
                 "      <phonenumber>447987654321</phonenumber>\n" +
                 "    </from>\n" +
@@ -50,15 +51,15 @@ public class CreateOptOutTest extends BaseTest {
                 "<accountreference>EX006789</accountreference>" +
                 "</optout>";
 
-        Calendar cal = Calendar.getInstance();
-        cal.set(2016, Calendar.MAY, 4, 11, 27, 12);
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        cal.set(2016, Calendar.MAY, 4, 10, 27, 12);
         cal.set(Calendar.MILLISECOND, 0);
         expectedReceivedAt = cal.getTime();
 
         server = new TestServer();
         server.start();
 
-        stubMethod = StubMethod.post("/v1.0/optouts");
+        stubMethod = StubMethod.post("/v1.0/optouts").ifContentType("text/xml");
         server.expect(stubMethod).thenReturn(200, "application/xml", responseBody);
 
         UserPassword userPassword = new UserPassword("YourUsername", "YourPassword");

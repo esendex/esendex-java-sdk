@@ -15,6 +15,7 @@ import org.junit.Test;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 import static org.junit.Assert.assertEquals;
 
@@ -33,7 +34,7 @@ public class GetOptOutTest extends BaseTest {
                 "  <link rel=\"self\" href=\"https://api.esendex.com/v1.0/optouts/6d2b745d-c214-4154-bca9-b0ff9a6b94c1\" />\n" +
                 "</optout>";
 
-        Calendar cal = Calendar.getInstance();
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         cal.set(2010, Calendar.DECEMBER, 31, 23, 59, 59);
         cal.set(Calendar.MILLISECOND, 0);
         expectedReceivedAt = cal.getTime();
