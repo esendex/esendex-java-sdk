@@ -1,6 +1,5 @@
 package esendex.sdk.java.model.domain.impl;
 
-import esendex.sdk.java.model.domain.response.FromAddress;
 import esendex.sdk.java.model.domain.response.OptOutResponse;
 
 import java.util.Date;

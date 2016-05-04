@@ -18,7 +18,7 @@ public class OptOutResponseAssembler {
         response.setAccountReference(dto.getAccountReference());
         response.setReceivedAt(dto.getReceivedAt());
 
-        FromAddressImpl from = new FromAddressImpl();
+        FromAddress from = new FromAddress();
         from.setPhoneNumber(dto.getFrom().getPhoneNumber());
         response.setFrom(from);
 

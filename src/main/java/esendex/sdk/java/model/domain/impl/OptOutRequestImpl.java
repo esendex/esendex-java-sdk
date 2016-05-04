@@ -1,7 +1,6 @@
 package esendex.sdk.java.model.domain.impl;
 
 import esendex.sdk.java.model.domain.request.OptOutRequest;
-import esendex.sdk.java.model.domain.response.FromAddress;
 
 public class OptOutRequestImpl implements OptOutRequest {
     private String accountReference;

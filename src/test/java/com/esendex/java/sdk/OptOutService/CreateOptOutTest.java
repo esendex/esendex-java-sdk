@@ -4,12 +4,10 @@ import com.esendex.java.sdk.BaseTest;
 import com.esendex.java.sdk.TestServer;
 import com.pyruby.stubserver.StubMethod;
 import esendex.sdk.java.EsendexException;
-import esendex.sdk.java.model.domain.impl.FromAddressImpl;
+import esendex.sdk.java.model.domain.impl.FromAddress;
 import esendex.sdk.java.model.domain.impl.OptOutRequestImpl;
 import esendex.sdk.java.model.domain.request.OptOutRequest;
-import esendex.sdk.java.model.domain.response.FromAddress;
 import esendex.sdk.java.model.domain.response.OptOutResponse;
-import esendex.sdk.java.model.transfer.optout.FromAddressDto;
 import esendex.sdk.java.service.OptOutService;
 import esendex.sdk.java.service.auth.BasicAuthenticator;
 import esendex.sdk.java.service.auth.UserPassword;
@@ -65,7 +63,7 @@ public class CreateOptOutTest extends BaseTest {
         UserPassword userPassword = new UserPassword("YourUsername", "YourPassword");
         OptOutService optOutService = new OptOutServiceImpl(new BasicAuthenticator(userPassword));
 
-        FromAddress fromAddress = new FromAddressImpl();
+        FromAddress fromAddress = new FromAddress();
         fromAddress.setPhoneNumber("99887744556322");
 
         OptOutRequest request = new OptOutRequestImpl();

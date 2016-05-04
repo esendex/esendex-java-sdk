@@ -2,6 +2,7 @@ package esendex.sdk.java.service.impl;
 
 import esendex.sdk.java.EsendexException;
 import esendex.sdk.java.http.HttpQuery;
+import esendex.sdk.java.model.domain.impl.FromAddress;
 import esendex.sdk.java.model.domain.impl.OptOutRequestAssembler;
 import esendex.sdk.java.model.domain.impl.OptOutResponseAssembler;
 import esendex.sdk.java.model.domain.request.OptOutRequest;
@@ -58,6 +59,37 @@ public class OptOutServiceImpl extends AbstractService implements OptOutService 
         query.addParameter(HttpQuery.START_INDEX, pageNumber);
         query.addParameter(HttpQuery.COUNT, pageSize);
         query.addParameter(HttpQuery.ACCOUNT_REFERENCE, account);
+
+        RetrieveOptOutsResource resource = new RetrieveOptOutsResource(authenticator, query);
+        resource.execute();
+
+        return new OptOutResponseAssembler().createCollectionResponse(resource.getResponseObject());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public OptOutCollectionResponse getOptOuts(FromAddress from, int pageNumber, int pageSize) throws EsendexException {
+        HttpQuery query = new HttpQuery();
+        query.addParameter(HttpQuery.START_INDEX, pageNumber);
+        query.addParameter(HttpQuery.COUNT, pageSize);
+        query.addParameter(HttpQuery.FROM, from.getPhoneNumber());
+
+        RetrieveOptOutsResource resource = new RetrieveOptOutsResource(authenticator, query);
+        resource.execute();
+
+        return new OptOutResponseAssembler().createCollectionResponse(resource.getResponseObject());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public OptOutCollectionResponse getOptOuts(String account, FromAddress from, int pageNumber, int pageSize) throws EsendexException {
+        HttpQuery query = new HttpQuery();
+        query.addParameter(HttpQuery.START_INDEX, pageNumber);
+        query.addParameter(HttpQuery.COUNT, pageSize);
+        query.addParameter(HttpQuery.ACCOUNT_REFERENCE, account);
+        query.addParameter(HttpQuery.FROM, from.getPhoneNumber());
 
         RetrieveOptOutsResource resource = new RetrieveOptOutsResource(authenticator, query);
         resource.execute();

@@ -1,8 +1,6 @@
 package esendex.sdk.java.model.domain.impl;
 
-import esendex.sdk.java.model.domain.response.FromAddress;
-
-public class FromAddressImpl implements FromAddress {
+public class FromAddress {
 
     private String phoneNumber;
 
