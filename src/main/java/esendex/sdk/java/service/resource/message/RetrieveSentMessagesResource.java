@@ -14,33 +14,34 @@ import esendex.sdk.java.service.resource.base.XmlResponderResource;
  *
  * @author Mike Whittaker
  */
-public class RetrieveSentMessagesResource 
-		extends XmlResponderResource<MessageCollectionResponseDto> {
-	
-	/**
-	 * Instantiates a new retrieve sent messages resource.
-	 * @param auth the authenticator
-	 * @param query the query 
-	 */
-	public RetrieveSentMessagesResource(Authenticator auth, HttpQuery query) {
-		
-		super(auth, null, null, query);
-	}
+public class RetrieveSentMessagesResource
+        extends XmlResponderResource<MessageCollectionResponseDto> {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected String getEndpointChild() {
-		return "messageheaders";
-	}
+    /**
+     * Instantiates a new retrieve sent messages resource.
+     *
+     * @param auth  the authenticator
+     * @param query the query
+     */
+    public RetrieveSentMessagesResource(Authenticator auth, HttpQuery query) {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected HttpRequestMethod getRequestMethod() {
-		return HttpRequestMethod.GET;
-	}
+        super(auth, null, null, query);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected String getEndpointChild() {
+        return "messageheaders";
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected HttpRequestMethod getRequestMethod() {
+        return HttpRequestMethod.GET;
+    }
 
 }

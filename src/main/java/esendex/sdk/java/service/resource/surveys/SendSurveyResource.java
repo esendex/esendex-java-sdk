@@ -11,6 +11,7 @@ public class SendSurveyResource extends BaseSurveysResource<RecipientsDto> {
     /**
      * Instantiates a new creates the contact resource.
      * @param auth the authenticator
+     * @param id the survey id
      */
     public SendSurveyResource(Authenticator auth, String id) {
         super(auth, id, null, "1.0");

@@ -8,7 +8,7 @@ import esendex.sdk.java.service.InboxService;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static junit.framework.Assert.assertNotNull;
+import static org.junit.Assert.assertNotNull;
 
 public class InboxServiceGetMessagesIT extends BaseTest {
 
@@ -26,7 +26,7 @@ public class InboxServiceGetMessagesIT extends BaseTest {
     @Test
     public void thenMessagesAreReturned() {
 
-        for(InboxMessageResponse response : messages.getMessages()) {
+        for (InboxMessageResponse response : messages.getMessages()) {
             assertNotNull(response.getId());
         }
     }

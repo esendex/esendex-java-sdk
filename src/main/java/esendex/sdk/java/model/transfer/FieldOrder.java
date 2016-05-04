@@ -3,6 +3,7 @@ package esendex.sdk.java.model.transfer;
 import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
 import esendex.sdk.java.model.transfer.contact.ContactDto;
 import esendex.sdk.java.model.transfer.message.*;
+import esendex.sdk.java.model.transfer.optout.OptOutResponseDto;
 import esendex.sdk.java.model.transfer.surveys.RecipientDto;
 import esendex.sdk.java.model.transfer.surveys.RecipientsDto;
 import esendex.sdk.java.model.transfer.surveys.TemplateFieldDto;
