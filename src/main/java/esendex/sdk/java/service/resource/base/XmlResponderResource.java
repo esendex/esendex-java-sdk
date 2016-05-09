@@ -37,7 +37,7 @@ public abstract class XmlResponderResource<S> extends Resource {
 	@Override
 	public void execute() throws EsendexException {
 		super.execute();
-		responder = new XmlResponder<S>(getResponse().getContent());
+		responder = new XmlResponder<>(getResponse().getContent());
 	}
 
 	/**

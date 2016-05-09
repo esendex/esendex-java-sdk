@@ -39,4 +39,10 @@ public interface IServiceFactory {
 	 * @return the service
 	 */
 	SurveysService getSurveysService();
+
+	/**
+	 * Obtains a service suitable for operations on the opt-outs resource.
+	 * @return the service
+	 */
+	OptOutService getOptOutService();
 }

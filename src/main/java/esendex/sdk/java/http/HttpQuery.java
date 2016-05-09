@@ -28,6 +28,9 @@ public class HttpQuery {
     public static final Key<String> ACCOUNT_REFERENCE
             = new Key<String>("accountreference");
 
+	public static final Key<String> FROM
+			= new Key<String>("from");
+
 	public static final String ACCOUNT_FILTER  = "account";
 
 

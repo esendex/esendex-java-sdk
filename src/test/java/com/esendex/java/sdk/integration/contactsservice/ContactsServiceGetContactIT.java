@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Vector;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class ContactsServiceGetContactIT extends BaseTest {
 

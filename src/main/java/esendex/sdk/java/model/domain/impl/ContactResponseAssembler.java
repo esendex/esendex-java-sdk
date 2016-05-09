@@ -9,29 +9,29 @@ import esendex.sdk.java.model.transfer.contact.ContactDto;
 
 public class ContactResponseAssembler {
 
-	public ContactResponse createResponse(ContactDto dto) {
+    public ContactResponse createResponse(ContactDto dto) {
 
-		ContactResponseImpl resp = new ContactResponseImpl();
+        ContactResponseImpl resp = new ContactResponseImpl();
 
-		resp.setFirstName(dto.getFirstname());
-		resp.setId(dto.getId());
+        resp.setFirstName(dto.getFirstname());
+        resp.setId(dto.getId());
         resp.setAccountReference(dto.getAccountReference());
-		resp.setLastName(dto.getLastname());
-		resp.setMobileNumber(dto.getPhoneNumber());
-		resp.setQuickName(dto.getQuickname());
+        resp.setLastName(dto.getLastname());
+        resp.setMobileNumber(dto.getPhoneNumber());
+        resp.setQuickName(dto.getQuickname());
 
+        return resp;
+    }
 
-		return resp;
-	}
+    public List<ContactResponse> createCollectionResponse(ContactCollectionDto col) {
 
-	public List<ContactResponse> createCollectionResponse(ContactCollectionDto col) {
+        List<ContactResponse> list = new ArrayList<>();
+        if (col != null) {
+            for (ContactDto dto : col.getContacts()) {
+                list.add(createResponse(dto));
+            }
+        }
 
-		List<ContactResponse> list = new ArrayList<ContactResponse>();
-		if (col != null) {
-			for (ContactDto dto : col.getContacts()) {
-				list.add(createResponse(dto));
-			}
-		}
-		return list;
-	}
+        return list;
+    }
 }

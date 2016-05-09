@@ -8,7 +8,7 @@ import esendex.sdk.java.service.InboxService;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static junit.framework.Assert.assertNotNull;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class InboxServiceGetPagedMessagesIT extends BaseTest {

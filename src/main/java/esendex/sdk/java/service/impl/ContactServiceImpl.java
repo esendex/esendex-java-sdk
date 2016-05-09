@@ -1,23 +1,18 @@
 package esendex.sdk.java.service.impl;
 
-import java.util.List;
-
 import esendex.sdk.java.EsendexException;
 import esendex.sdk.java.http.HttpQuery;
 import esendex.sdk.java.model.domain.impl.ContactRequestAssembler;
 import esendex.sdk.java.model.domain.impl.ContactResponseAssembler;
 import esendex.sdk.java.model.domain.request.ContactRequest;
 import esendex.sdk.java.model.domain.response.ContactResponse;
-import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
 import esendex.sdk.java.model.transfer.contact.ContactDto;
 import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
 import esendex.sdk.java.service.ContactService;
 import esendex.sdk.java.service.auth.Authenticator;
-import esendex.sdk.java.service.resource.contact.CreateContactResource;
-import esendex.sdk.java.service.resource.contact.DeleteContactResource;
-import esendex.sdk.java.service.resource.contact.RetrieveContactResource;
-import esendex.sdk.java.service.resource.contact.RetrieveContactsResource;
-import esendex.sdk.java.service.resource.contact.UpdateContactResource;
+import esendex.sdk.java.service.resource.contact.*;
+
+import java.util.List;
 
 /**
  * A concrete ContactService implementation.
