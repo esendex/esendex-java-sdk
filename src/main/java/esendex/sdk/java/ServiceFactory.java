@@ -89,4 +89,12 @@ public abstract class ServiceFactory implements IServiceFactory  {
 		return new SurveysServiceImpl(authenticator);
 	}
 
+	/**
+	 * Obtains a service suitable for operations on the opt-outs resource.
+	 * @return the service
+	 */
+	public OptOutService getOptOutService() {
+		return new OptOutServiceImpl(authenticator);
+	}
+
 }

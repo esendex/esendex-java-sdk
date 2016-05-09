@@ -30,8 +30,7 @@ public class OptOutResponseAssembler {
         List<OptOutResponse> optouts = new ArrayList<>();
         if (col.getOptouts() != null) {
             for (OptOutResponseDto dto : col.getOptouts()) {
-                OptOutResponseAssembler assembler = new OptOutResponseAssembler();
-                optouts.add(assembler.createResponse(dto));
+                optouts.add(this.createResponse(dto));
             }
         }
 
@@ -39,7 +38,6 @@ public class OptOutResponseAssembler {
         response.setCount(col.getCount());
         response.setStartIndex(col.getStartindex());
         response.setTotalCount(col.getTotalcount());
-        response.setOptouts(optouts);
 
         return response;
     }
