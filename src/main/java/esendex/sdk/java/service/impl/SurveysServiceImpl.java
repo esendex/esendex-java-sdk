@@ -46,6 +46,7 @@ public class SurveysServiceImpl
             for (String string : alreadyKeys) {
                 if(string == item.getName())
                     throw new EsendexException("MetaData fields collection cannot contain duplicate fields");
+                alreadyKeys.add(string);
             }
         }
     }
