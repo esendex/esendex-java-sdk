@@ -1,5 +1,6 @@
 package esendex.sdk.java.model.domain.request;
 
+import esendex.sdk.java.model.domain.impl.MetaData;
 import esendex.sdk.java.model.domain.impl.TemplateField;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ public class RecipientRequest {
 
     private String phonenumber;
     private List<TemplateField> templateFields = new ArrayList<TemplateField>();
+    private List<MetaData> metaData = new ArrayList<MetaData>();
 
     /**
      * @param phonenumber the phone number
@@ -30,5 +32,11 @@ public class RecipientRequest {
 
     public void setTemplateFields(List<TemplateField> templateFields) {
         this.templateFields = templateFields;
+    }
+
+    public List<MetaData> getMetaData() { return metaData;  }
+
+    public void setMetaData(List<MetaData> metaData) {
+        this.metaData = metaData;
     }
 }
