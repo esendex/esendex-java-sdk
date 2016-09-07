@@ -60,8 +60,6 @@ public abstract class AbstractAuthenticator implements Authenticator {
 	 * @param urlCon the url con {@inheritDoc}
 	 */
 	public void createHeader(URLConnection urlCon) {
-		log.info("Adding auth header for: " + getClass().getSimpleName() + ": " + getCredentials());
-		log.info(AUTHORISATION + ": " + getScheme() + " " + encode());
 		urlCon.setRequestProperty(AUTHORISATION, getScheme() + " " + encode());
 	}
 	
