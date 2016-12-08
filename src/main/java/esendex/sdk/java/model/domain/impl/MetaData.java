@@ -5,8 +5,7 @@ public class MetaData {
     private String name;
     private String value;
 
-    public MetaData(String name, String value)
-    {
+    public MetaData(String name, String value) {
         this.name = name;
         this.value = value;
     }
