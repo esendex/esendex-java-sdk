@@ -31,6 +31,10 @@ public abstract class XmlResponderResource<S> extends Resource {
         super(auth, account, id, query, version);
     }
 
+	public XmlResponderResource(Authenticator auth, String id, HttpQuery query, String version, String domain, boolean secure) {
+		super(auth, id, query, version, domain, secure);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */

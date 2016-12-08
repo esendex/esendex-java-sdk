@@ -60,13 +60,13 @@ public class EsendexProperties {
 	
 	/**
 	 * Gets the property.
-	 * @param key the key
+	 * @param key the name
 	 * @return the property
 	 */
 	public String getProperty(Key key) {
 		String prop = properties.getProperty(key.value);
 		if (prop == null) throw new NullPointerException("Key: '" + key 
-				+ "' could not be found, this key is mandatory");
+				+ "' could not be found, this name is mandatory");
 		return prop;
 	}
 

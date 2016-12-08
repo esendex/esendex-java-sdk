@@ -2,17 +2,18 @@
 package esendex.sdk.java.parser.xstream;
 
 import java.io.StringWriter;
+import java.util.Map;
 
+import esendex.sdk.java.model.domain.response.StandardReportRow;
+import esendex.sdk.java.model.domain.response.SurveyReportError;
 import esendex.sdk.java.model.transfer.LinkDto;
 import esendex.sdk.java.model.transfer.contact.ContactCollectionDto;
 import esendex.sdk.java.model.transfer.contact.ContactDto;
 import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
 import esendex.sdk.java.model.transfer.message.*;
 import esendex.sdk.java.model.transfer.optout.*;
-import esendex.sdk.java.model.transfer.surveys.RecipientDto;
-import esendex.sdk.java.model.transfer.surveys.RecipientsDto;
-import esendex.sdk.java.model.transfer.surveys.TemplateFieldDto;
-import esendex.sdk.java.model.transfer.surveys.TemplateFieldsDto;
+import esendex.sdk.java.model.transfer.surveys.*;
+import esendex.sdk.java.parser.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -26,11 +27,6 @@ import esendex.sdk.java.EsendexProperties;
 import esendex.sdk.java.model.transfer.Dto;
 import esendex.sdk.java.model.transfer.PageableDto;
 import esendex.sdk.java.model.transfer.session.SessionDto;
-import esendex.sdk.java.parser.EsendexCasedEnumConverter;
-import esendex.sdk.java.parser.InvalidXmlException;
-import esendex.sdk.java.parser.EmptyToNullDateConverter;
-import esendex.sdk.java.parser.UnmappableException;
-import esendex.sdk.java.parser.XmlParser;
 
 /**
  * XmlParser that uses the XStream library to convert between XML and Dto
@@ -78,12 +74,6 @@ public class XStreamParser implements XmlParser {
         xStream.processAnnotations(ContactDto.class);
         xStream.processAnnotations(ContactResponseDto.class);
         xStream.processAnnotations(LinkDto.class);
-
-        //Surveys
-        xStream.processAnnotations(RecipientDto.class);
-        xStream.processAnnotations(RecipientsDto.class);
-        xStream.processAnnotations(TemplateFieldDto.class);
-        xStream.processAnnotations(TemplateFieldsDto.class);
 
         //OptOuts
         xStream.alias("optouts", OptOutCollectionResponseDto.class);
@@ -154,5 +144,4 @@ public class XStreamParser implements XmlParser {
         String xml = declaration + writer.toString();
         return xml;
     }
-
 }

@@ -66,5 +66,4 @@ public abstract class XmlRequesterResponderResource<Q extends Dto, S > extends R
 	public S getResponseObject() {
 		return responder.getResponseObject();
 	}
-
 }
