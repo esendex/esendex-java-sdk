@@ -16,6 +16,7 @@ public class RecipientsRequestAssembler  {
 
         dto.setPhonenumber(r.getPhonenumber());
         dto.setTemplateFields(new TemplateFieldRequestAssembler().create(r.getTemplateFields()));
+        dto.setMetaData(new MetaDataRequestAssembler().create(r.getMetaData()));
 
         return dto;
     }

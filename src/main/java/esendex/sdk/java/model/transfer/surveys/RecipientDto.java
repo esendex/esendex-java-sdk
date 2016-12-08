@@ -17,6 +17,9 @@ public class RecipientDto extends Dto {
     @XStreamAlias("templatefields")
     private TemplateFieldsDto templateFields;
 
+    @XStreamAlias("metadata")
+    private MetaDataDto metaData;
+
     public String getPhonenumber() {
         return phonenumber;
     }
@@ -31,6 +34,10 @@ public class RecipientDto extends Dto {
 
     public void setTemplateFields(TemplateFieldsDto templateFields) {
         this.templateFields = templateFields;
+    }
+
+    public  void setMetaData(MetaDataDto metadata) {
+        this.metaData = metadata;
     }
 }
 

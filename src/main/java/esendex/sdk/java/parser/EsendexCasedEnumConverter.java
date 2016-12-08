@@ -35,8 +35,8 @@ public class EsendexCasedEnumConverter extends EnumConverter {
     	value = toString;
     	
 //    	String name = enuum.name();
-//    	if (name.equals(toString)) {
-//    		value = toTitleCase(name);
+//    	if (key.equals(toString)) {
+//    		value = toTitleCase(key);
 //    	} else {
 //    		value = toString;
 //    	}

@@ -38,7 +38,7 @@ public interface IServiceFactory {
 	 * Obtains a service suitable for operations on the surveys resource.
 	 * @return the service
 	 */
-	SurveysService getSurveysService();
+	SurveySendService getSurveysService();
 
 	/**
 	 * Obtains a service suitable for operations on the opt-outs resource.

@@ -37,8 +37,6 @@ public abstract class Resource {
 	private String baseUrl;
 	private Authenticator authenticator;
 
-
-
 	public Resource(Authenticator auth, String id, HttpQuery query, String version, String domain, boolean secure) {
 
 		this.id = id;
