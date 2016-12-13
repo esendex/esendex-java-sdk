@@ -9,10 +9,8 @@ import esendex.sdk.java.model.transfer.contact.ContactDto;
 import esendex.sdk.java.model.transfer.contact.ContactResponseDto;
 import esendex.sdk.java.model.transfer.message.*;
 import esendex.sdk.java.model.transfer.optout.*;
-import esendex.sdk.java.model.transfer.surveys.RecipientDto;
-import esendex.sdk.java.model.transfer.surveys.RecipientsDto;
-import esendex.sdk.java.model.transfer.surveys.TemplateFieldDto;
-import esendex.sdk.java.model.transfer.surveys.TemplateFieldsDto;
+import esendex.sdk.java.model.transfer.surveys.*;
+import esendex.sdk.java.parser.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -26,11 +24,6 @@ import esendex.sdk.java.EsendexProperties;
 import esendex.sdk.java.model.transfer.Dto;
 import esendex.sdk.java.model.transfer.PageableDto;
 import esendex.sdk.java.model.transfer.session.SessionDto;
-import esendex.sdk.java.parser.EsendexCasedEnumConverter;
-import esendex.sdk.java.parser.InvalidXmlException;
-import esendex.sdk.java.parser.EmptyToNullDateConverter;
-import esendex.sdk.java.parser.UnmappableException;
-import esendex.sdk.java.parser.XmlParser;
 
 /**
  * XmlParser that uses the XStream library to convert between XML and Dto
@@ -79,11 +72,16 @@ public class XStreamParser implements XmlParser {
         xStream.processAnnotations(ContactResponseDto.class);
         xStream.processAnnotations(LinkDto.class);
 
-        //Surveys
+        //Surveys - send
         xStream.processAnnotations(RecipientDto.class);
         xStream.processAnnotations(RecipientsDto.class);
         xStream.processAnnotations(TemplateFieldDto.class);
         xStream.processAnnotations(TemplateFieldsDto.class);
+
+        //Surveys - standard report
+        xStream.processAnnotations(StandardReportDto.class);
+        xStream.alias("rows", StandardReportDto.class);
+        xStream.registerConverter(new RecipientDataConverter());
 
         //OptOuts
         xStream.alias("optouts", OptOutCollectionResponseDto.class);
