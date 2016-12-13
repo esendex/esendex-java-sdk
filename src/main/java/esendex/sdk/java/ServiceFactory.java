@@ -93,11 +93,9 @@ public abstract class ServiceFactory implements IServiceFactory  {
 	 * Obtains a service suitable for downloading reports for a survey.
 	 * @return the service
 	 */
-/*
 	public SurveyReportService getSurveysReportService() {
 		return new SurveyReportServiceImpl(authenticator);
 	}
-*/
 
 	/**
 	 * Obtains a service suitable for operations on the opt-outs resource.
