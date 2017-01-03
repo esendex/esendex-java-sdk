@@ -35,10 +35,16 @@ public interface IServiceFactory {
 	ContactService getContactService();
 
 	/**
-	 * Obtains a service suitable for operations on the surveys resource.
+	 * Obtains a service suitable for sending surveys to new recipients.
 	 * @return the service
 	 */
-	SurveysService getSurveysService();
+	SurveySendService getSurveySendService();
+
+	/**
+	 * Obtains a service suitable for downloading reports for a survey.
+	 * @return the service
+	 */
+	SurveyReportService getSurveysReportService();
 
 	/**
 	 * Obtains a service suitable for operations on the opt-outs resource.

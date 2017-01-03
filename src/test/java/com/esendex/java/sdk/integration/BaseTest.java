@@ -17,7 +17,6 @@ public abstract class BaseTest {
     public static final String DESTINATION_NUMBER;
 	private static final UserPassword userPassword;
 
-
     static {
         EsendexTestProperties testProperties = EsendexTestProperties.instance();
 

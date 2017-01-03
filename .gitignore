@@ -1,5 +1,9 @@
-.idea
 lib
 out
 esendex_test.properties
 target
+
+# Intellij
+.idea/
+*.iml
+*.iws

@@ -35,7 +35,7 @@ public class XmlRequester<Q extends Dto> {
 	 * Provide the request data that is required by the end point of this service.
 	 * @return the request data to submit
 	 */
-	protected String getRequestData() {
+	public String getRequestData() {
 		log.info("request dto: " + requestDto);
 		return parser.toXml(requestDto);
 	}

@@ -10,7 +10,7 @@
     </properties>
     <groupId>esendex-java-sdk</groupId>
     <artifactId>esendex-java-sdk</artifactId>
-    <version>3.1.0</version>
+    <version>4.0.0</version>
 
     <profiles>
         <profile>

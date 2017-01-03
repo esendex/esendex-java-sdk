@@ -33,6 +33,18 @@ public class HttpQuery {
 
 	public static final String ACCOUNT_FILTER  = "account";
 
+	public static final Key<String> QUESTION_SENT_AFTER
+			= new Key<>("questionSentAfter");
+
+	public static final Key<String> QUESTION_SENT_BEFORE
+			= new Key<>("questionSentBefore");
+
+	public static final Key<String> ANSWER_RECEIVED_AFTER
+			= new Key<>("answerReceivedAfter");
+
+	public static final Key<String> ANSWER_RECEIVED_BEFORE
+			= new Key<>("answerReceivedBefore");
+
 
 	public enum Action {
 		READ,
