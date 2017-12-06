@@ -33,6 +33,9 @@ public abstract class MessageResponseAssembler {
 	}
 
 	private Identity createBatch(BatchDto dto) {
+		if(dto == null)
+			return null;
+
 		Identity batch = new Identity();
 		batch.setId(dto.getId());
 		batch.setUri(dto.getUri());
