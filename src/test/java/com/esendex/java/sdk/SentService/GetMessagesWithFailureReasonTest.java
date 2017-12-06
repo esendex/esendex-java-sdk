@@ -53,6 +53,7 @@ public class GetMessagesWithFailureReasonTest extends BaseTest {
                 "   <description>Lots of problems</description>" +
                 "   <permanentfailure>false</permanentfailure>" +
                 "  </failurereason>" +
+                "  <batch id=\"e84ccbdc-732f-1485-0b03-0aa56519e001\" uri=\"https://api.esendex.com/v1.0/messagebatches/e84ccbdc-732f-1485-0b03-0aa56519e001\" /> "+
                 " </messageheader>" +
                 "</messageheaders>";
 
@@ -108,6 +109,7 @@ public class GetMessagesWithFailureReasonTest extends BaseTest {
         assertEquals("Testing REST API", message.getSummary());
         assertEquals(Integer.valueOf(1), message.getParts());
         assertEquals("user@example.com", message.getUserName());
+        assertEquals("e84ccbdc-732f-1485-0b03-0aa56519e001", message.getBatch().getId());
     }
 
     @Test

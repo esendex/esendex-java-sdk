@@ -1,7 +1,7 @@
 
 package esendex.sdk.java.model.transfer.message;
-import java.util.Date;
 
+import java.util.Date;
 import esendex.sdk.java.model.transfer.Dto;
 import esendex.sdk.java.model.types.MessageDirection;
 import esendex.sdk.java.model.types.MessageType;
@@ -32,6 +32,7 @@ public class MessageResponseDto extends Dto {
 	private Date readat;				    // inbound
 	private String readby;				    // inbound
 	private FailureReasonDto failurereason; // outbound
+	private BatchDto batch;
 
 	public MessageResponseDto() {
 		super();
@@ -201,5 +202,9 @@ public class MessageResponseDto extends Dto {
 			"\nusername: " + username +
 			"\nreadat: " + readat +
 			"\nreadby: " + readby;
+	}
+
+	public BatchDto getBatch() {
+		return batch;
 	}
 }

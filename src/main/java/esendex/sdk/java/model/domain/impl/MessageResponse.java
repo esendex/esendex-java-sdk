@@ -23,4 +23,6 @@ public interface MessageResponse {
 
 	Integer getParts();
 
+	Identity getBatch();
+
 }

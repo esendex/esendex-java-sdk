@@ -51,6 +51,7 @@ public class GetMessageWithFailureReasonTest extends BaseTest {
                 "  <description>Some problem</description>" +
                 "  <permanentfailure>true</permanentfailure>" +
                 " </failurereason>" +
+                "  <batch id=\"e84ccbdc-732f-1485-0b03-0aa56519e001\" uri=\"https://api.esendex.com/v1.0/messagebatches/e84ccbdc-732f-1485-0b03-0aa56519e001\" /> "+
                 "</messageheader>";
 
         Calendar cal = Calendar.getInstance();
@@ -95,6 +96,7 @@ public class GetMessageWithFailureReasonTest extends BaseTest {
         assertEquals("Testing REST API", result.getSummary());
         assertEquals(Integer.valueOf(1), result.getParts());
         assertEquals("user@example.com", result.getUserName());
+        assertEquals("e84ccbdc-732f-1485-0b03-0aa56519e001", result.getBatch().getId());
     }
 
     @Test
