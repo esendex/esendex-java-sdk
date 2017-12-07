@@ -45,6 +45,7 @@ public class GetMessageTest extends BaseTest {
                 " <direction>Outbound</direction>" +
                 " <parts>1</parts>" +
                 " <username>user@example.com</username>" +
+                "  <batch id=\"e84ccbdc-732f-1485-0b03-0aa56519e001\" uri=\"https://api.esendex.com/v1.0/messagebatches/e84ccbdc-732f-1485-0b03-0aa56519e001\" /> "+
                 "</messageheader>";
 
         Calendar cal = Calendar.getInstance();
@@ -90,5 +91,6 @@ public class GetMessageTest extends BaseTest {
         assertEquals("Testing REST API", result.getSummary());
         assertEquals(Integer.valueOf(1), result.getParts());
         assertEquals("user@example.com", result.getUserName());
+        assertEquals("e84ccbdc-732f-1485-0b03-0aa56519e001", result.getBatch().getId());
     }
 }

@@ -17,6 +17,7 @@ public abstract class MessageResponseImpl extends Identity implements MessageRes
 	private String summary;
 	private MessageBody body;
 	private Integer parts;
+	private Identity batch;
 
 	public MessageResponseImpl() {
 	}
@@ -53,6 +54,8 @@ public abstract class MessageResponseImpl extends Identity implements MessageRes
 		return parts;
 	}
 
+	public Identity getBatch() { return batch; }
+
 	protected void setReference(String reference) {
 		this.reference = reference;
 	}
@@ -84,6 +87,8 @@ public abstract class MessageResponseImpl extends Identity implements MessageRes
 	protected void setParts(Integer parts) {
 		this.parts = parts;
 	}
+
+	protected void setBatch(Identity batch) { this.batch = batch; }
 
 	/**
 	 * {@inheritDoc}

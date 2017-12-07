@@ -1,5 +1,6 @@
 package esendex.sdk.java.model.domain.impl;
 
+import esendex.sdk.java.model.transfer.message.BatchDto;
 import esendex.sdk.java.model.transfer.message.BodyDto;
 import esendex.sdk.java.model.transfer.message.MessageContactDto;
 import esendex.sdk.java.model.transfer.message.MessageResponseDto;
@@ -22,12 +23,23 @@ public abstract class MessageResponseAssembler {
 		response.setSummary(dto.getSummary());
 		response.setTo(createContact(dto.getTo()));
 		response.setType(dto.getType());
+		response.setBatch(createBatch(dto.getBatch()));
 	}
 
 	private MessageBody createBody(BodyDto dto) {
 		MessageBody body = new MessageBody();
 		body.setBodyText(dto.getText());
 		return body;
+	}
+
+	private Identity createBatch(BatchDto dto) {
+		if(dto == null)
+			return null;
+
+		Identity batch = new Identity();
+		batch.setId(dto.getId());
+		batch.setUri(dto.getUri());
+		return batch;
 	}
 	
 	private MessageContact createContact(MessageContactDto dto) {
