@@ -26,7 +26,7 @@ public class XmlRequester<Q extends Dto> {
 		if (requestDto == null)
 			throw new NullPointerException("Argument must not be null");
 
-		log.info("Request class: " + requestDto.getClass().getSimpleName());
+		log.debug("Request class: " + requestDto.getClass().getSimpleName());
 		this.parser = XmlParserFactory.getInstance();
 		this.requestDto = requestDto;
 	}
@@ -36,7 +36,7 @@ public class XmlRequester<Q extends Dto> {
 	 * @return the request data to submit
 	 */
 	public String getRequestData() {
-		log.info("request dto: " + requestDto);
+		log.debug("request dto: " + requestDto);
 		return parser.toXml(requestDto);
 	}
 }
