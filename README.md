@@ -36,3 +36,7 @@ To run all the tests you need an active Esendex account with permissions on the 
 Copy `esendex_test.properties.example` as `esendex_test.properties` and fill in your account information and a mobile number used as a message target.
 
 Esendex developers can use the `tests.domain` key to run the tests against alternate environments.
+
+### Version Numbers
+
+When updating, don't forget to edit `pom.xml` to update the version number appropriately.
