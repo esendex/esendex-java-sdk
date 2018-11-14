@@ -25,3 +25,11 @@ If you're not using a logging framework which Apache Commons Logging recognises 
 Otherwise, you'll need to work out the appropriate configuration methods for your logging framework. To determine which one ACL is selecting, set the system property "org.apache.commons.logging.diagnostics.dest" to "STDOUT" or "STDERR" as preferred, and it will output all the steps in the discovery process for which log provider it selected.
 
 For more information, consult the Apache Commons Logging user guide.
+
+## Development
+
+To run all the tests you need an active Esendex account with permissions on the full set of supported Esendex products.
+
+Copy `esendex_test.properties.example` as `esendex_test.properties` and fill in your account information and a mobile number used as a message target.
+
+Esendex developers can use the `tests.domain` key to run the tests against alternate environments.
