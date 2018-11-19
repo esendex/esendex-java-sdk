@@ -37,9 +37,9 @@ public class XmlResponder<S> {
 
     @SuppressWarnings("unchecked")
 	private void createResponseObject() throws EsendexException {
-		log.info("Response: " + XmlPrettyPrinter.format(responseContent));
+		log.debug("Response: " + XmlPrettyPrinter.format(responseContent));
 		responseDto = (S) parser.fromXml(responseContent);
-		log.info("Response class: " + responseDto.getClass().getSimpleName());
+		log.debug("Response class: " + responseDto.getClass().getSimpleName());
 	}
 
 	/**

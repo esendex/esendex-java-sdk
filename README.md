@@ -8,3 +8,35 @@ The Esendex Java SDK is an easy to use client for the Esendex REST API which you
 It contains a set of services for sending SMS and Voice messages, receiving SMS, tracking the status of your sent messages and more.
 
 Full details at http://developers.esendex.com/SDKs/Java-SDK
+
+
+## Logging
+
+The SDK contains logging calls using the Apache Commons Logging framework. This logging is expected to be helpful only for diagnostic purposes, and logs only at DEBUG level.
+
+**Please note** that the DEBUG level log messages include the entirety of messages sent to and from the Esendex servers, and will thus contain message contents, recipients and originators. This almost certainly contains personally identifiable information (PID), and so the DEBUG level logging should be used only with appropriate consideration.
+
+To configure this logging, clients should follow the [configuration process for Apache Commons Logging](http://commons.apache.org/proper/commons-logging/apidocs/org/apache/commons/logging/package-summary.html). This will allow the SDK's logging to be integrated with that of the hosting application.
+
+Logger instances are obtained on a per-class basis within the SDK based on the class name, so if your chosen framework supports configuring logging by context name you can target the SDK's messages by getting anything under the `esendex` toplevel namespace.
+
+If you're not using a logging framework which Apache Commons Logging recognises then it will probably be defaulting to the `Jdk14Logger`, which uses `java.util.logging` to issue its log messages. This can be configured using its own configuration methods. For example, you can turn on the DEBUG logging for the Esendex SDK:
+
+> Logger.getLogger("esendex").setLevel(Level.DEBUG);
+
+Otherwise, you'll need to work out the appropriate configuration methods for your logging framework. To determine which one ACL is selecting, set the system property "org.apache.commons.logging.diagnostics.dest" to "STDOUT" or "STDERR" as preferred, and it will output all the steps in the discovery process for which log provider it selected.
+
+For more information, consult the Apache Commons Logging user guide.
+
+
+## Development
+
+To run all the tests you need an active Esendex account with permissions on the full set of supported Esendex products.
+
+Copy `esendex_test.properties.example` as `esendex_test.properties` and fill in your account information and a mobile number used as a message target.
+
+Esendex developers can use the `tests.domain` key to run the tests against alternate environments.
+
+### Version Numbers
+
+When updating, don't forget to edit `pom.xml` to update the version number appropriately.

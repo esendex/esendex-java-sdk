@@ -184,9 +184,9 @@ public abstract class Resource {
 		HttpRequestMethod method = getRequestMethod();
 		String data = getRequestData();
 
-		log.info(getClass().getSimpleName());
-		log.info(method + " to: " + url);
-		log.info("Request: " + XmlPrettyPrinter.format(data));
+		log.debug(getClass().getSimpleName());
+		log.debug(method + " to: " + url);
+		log.debug("Request: " + XmlPrettyPrinter.format(data));
 
 		httpResponse = HttpConnectorFactory.getConnector().connect(
 				url,
@@ -194,7 +194,7 @@ public abstract class Resource {
 				data,
 				authenticator);
 
-		log.info("Response: " + httpResponse);
+		log.debug("Response: " + httpResponse);
 
 		if (! isHttpOkay()) throw new HttpException(
 				"Status code: " + httpResponse.getStatusCode());
