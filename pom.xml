@@ -10,7 +10,7 @@
     </properties>
     <groupId>esendex-java-sdk</groupId>
     <artifactId>esendex-java-sdk</artifactId>
-    <version>4.0.2</version>
+    <version>4.0.3</version>
 
     <profiles>
         <profile>
@@ -116,7 +116,7 @@
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
-            <version>1.4.9</version>
+            <version>1.4.19</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

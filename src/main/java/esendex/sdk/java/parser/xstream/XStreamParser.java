@@ -18,6 +18,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.StreamException;
 import com.thoughtworks.xstream.io.xml.CompactWriter;
 import com.thoughtworks.xstream.mapper.CannotResolveClassException;
+import com.thoughtworks.xstream.security.AnyTypePermission;
 
 import esendex.sdk.java.EsendexException;
 import esendex.sdk.java.EsendexProperties;
@@ -113,6 +114,9 @@ public class XStreamParser implements XmlParser {
         xStream.addImplicitCollection(
                 MessageCollectionResponseDto.class, "messageheaders",
                 MessageResponseDto.class);
+    
+    
+        xStream.addPermission(AnyTypePermission.ANY);
     }
 
     // configures the field order for the DTOs
