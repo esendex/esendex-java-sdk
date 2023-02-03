@@ -28,6 +28,24 @@ Otherwise, you'll need to work out the appropriate configuration methods for you
 
 For more information, consult the Apache Commons Logging user guide.
 
+##Https Connections
+
+In order to enable **https** transport layer in the esendex java library you must enable the property 
+
+> esendex.secure=true
+
+in the file `esendex.properties`
+
+This goes through the basic `esendex.sdk.java.service.resource.base.Resource` class which reads the value from the properties file.
+
+Other abstract classes used in this library just set the *https* by default, without reading the property files, for example:
+
+- BaseSurveryResource
+- SurveySendResource
+- XmlResponderResource
+
+
+
 
 ## Development
 
